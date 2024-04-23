@@ -48,7 +48,7 @@ This FastAPI application serves as a conversational AI interface that processes 
         - `background_tasks`: BackgroundTasks object for handling asynchronous tasks.
         - `conversation_input`: Data model containing user input and configuration details.
     - **Returns:** AI response based on the input.
-2. **transcribe(audio_file_path)**
+2. **transcribe(audio_file_path)**(Not using in the current implementation) 
     - **Description:** Transcribes audio input using Whisper library.
     - **Parameters:**
         - `audio_file_path`: Path to the audio file for transcription.
