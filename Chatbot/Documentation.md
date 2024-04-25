@@ -5,6 +5,12 @@
 
 This FastAPI application serves as a conversational AI interface that processes user input, generates responses based on predefined prompt templates, and currently supports text input/output methods.
 
+## Models:
+
+The application uses llama2:chat model that is available on ollama. Gemma and orca-mini models have been tested before. 
+## Prompt Templates:
+The application implements three custom scenario where it mentions a scenario . The LLM is prompted with this scenario and is told to act like the persona mentioned in the prompt template.
+
 ### API Endpoints:
 
 - **POST /process/**
@@ -64,3 +70,9 @@ This FastAPI application serves as a conversational AI interface that processes 
 
 1. Send a POST request to `/process/` with the required parameters in the request body to interact with the conversational AI interface.
 2. Ensure the input method, output method, and prompt template are provided for accurate responses.
+
+
+## Current Challenges
+1. The model is unable to provide appropriate responses
+2. The model goes into turn based coversation and generates an entire conversation on its own 
+3. The model struggles with memory and that functionality is currently worked upon.

@@ -117,6 +117,7 @@ async def process_conversation(background_tasks: BackgroundTasks, conversation_i
             question = str(question)
             response_text = conversation.run(input= question)
             print(conversation_input)
+            print("memory\n" , conversation.memory.buffer)
             return response_text
             
         else:
