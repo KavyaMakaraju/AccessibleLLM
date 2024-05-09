@@ -55,12 +55,12 @@
 
 - *Model Type:* Whisper Model
 - *Metrics:*
-  - Overall Accuracy: 93.40%
-  - Overall Precision: 94.05%
-  - Overall Recall: 93.40%
-  - Overall F1-score: 93.39%
-  - Overall Word Error Rate (WER): 0.30%
-  - Overall Character Error Rate (CER): 0.14%
+  - Overall Accuracy: 93.19%
+  - Overall Precision: 94.19%
+  - Overall Recall: 93.19%
+  - Overall F1-score: 93.30%
+  - Overall Word Error Rate (WER): 0.14
+  - Overall Character Error Rate (CER): 0.09
 
 ---
 
