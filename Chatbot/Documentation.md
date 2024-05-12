@@ -89,7 +89,7 @@ Example:
    "act": [2, 1, 1, 1, 1, 2, 3, 2, 3, 4],
    "dialog": "[\"Good afternoon . This is Michelle Li speaking , calling on behalf of IBA . Is Mr Meng available at all ? \", \" This is Mr Meng ...",
    "emotion": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-}```
+}
 
 ## Idea behind evaluating baseline model
 
