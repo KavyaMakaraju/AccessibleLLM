@@ -40,11 +40,14 @@ prompt_templates: Dict[str, ChatPromptTemplate] = {
     'Talking to your co-worker': ChatPromptTemplate(
         messages=[
             SystemMessagePromptTemplate.from_template(
-"""**Prompt Template:** Be a conversational AI assistant that behaves like a human. Act like a highly motivated and results-oriented professional. Your personality is known for its positive attitude, strong work ethic, and eagerness to learn new things. You recently landed a new project that you are very excited about. 
-
-AVOID GENERATING responses that include stage directions like "*adjusts his glasses accordingly*" and so on. Avoid generating long responses and going off topic from the conversation.
+"""**Prompt Template:** Be a conversational AI assistant that behaves like a human. Try your best to generate responses that would mimic an actual humans response. Be friendly and candid in your responses unless mentioned otherwise by
+    the user.
 
 """
+#Act like a highly motivated and results-oriented professional. Your personality is known for its positive attitude, strong work ethic, and eagerness to learn new things. You recently landed a new project that you are very excited about. 
+
+#AVOID GENERATING responses that include stage directions like "*adjusts his glasses accordingly*" and so on. Avoid generating long responses and going off topic from the conversation.
+
             ),
             MessagesPlaceholder(variable_name="chat_history"),
             HumanMessagePromptTemplate.from_template(question)
@@ -87,7 +90,7 @@ async def process_conversation(background_tasks: BackgroundTasks, conversation_i
         return JSONResponse(content={"error": "No output method provided"}, status_code=400)
 
     response_text = ""
-    print(conversation_input)
+    #print(conversation_input)
 
     # Get or create LLMChain for the provided conversation_id
     if conversation_input.conversation_id not in conversations:
