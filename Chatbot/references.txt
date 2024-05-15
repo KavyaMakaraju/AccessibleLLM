@@ -1,0 +1,212 @@
+References:
+0:  There is one . 5 blocks away from here ? 
+1:  Surely , of course . What kind of currency have you got ? 
+2:  How much would you like to change ? 
+3:  This is Mr Meng speaking , Michelle . 
+4:  That was quick ! I wasn't expecting it until later this week . 
+5:  Shall I come in and collect it ? 
+6:  Mmmm ... if I come in and collect it this afternoon , is there any way I could use it today ? Petty cash is getting low , so I need to draw some money . 
+7:  I see . Yes , that's fine . I'll be there at around 2:30 pm . See you later , and thanks . 
+8:  As a reporter , he must have acute insight and language skills . At the same time , he must have good judgment , the respect for his job and tactical cooperation with others . 
+9:  I think I've got used to work under pressure . I will adjust myself to the step of your newspaper quickly . 
+10:  Good morning I'd like to mail this box of books to Taiwan . 
+11:  How long does it take to reach Taiwan by sea ? 
+12:  That's too long.How long does it take to reach Taiwan by airmail ? 
+13:  Then how much is that by airmail ? 
+14:  That's a little bit expensive . 
+15:  I guess I have to send it by airmail . 
+16:  Yes , please . 
+17:  OK . 
+18:  Of course . Go straight ahead . Turn right at the next street . You'll see a tall , yellow building.The post office is on the first floor . 
+19:  Yes , you are right . 
+20:  No , It's only about five minutes ' walk . 
+21:  It's my pleasure . 
+22:  He's a bright boy , isn't he ? 
+23:  Don't worry , he'll make good progress step by step . 
+24:  What is that problem , sir ? 
+25:  Are you sure , sir ? Flies I could believe , but cockroaches ? 
+26:  Sir , we run a spotless and cockroach-less hotel . 
+27:  I'm sorry , sir . Let me transfer you to my supervisor . 
+28:  Why not ? It's my parking space . 
+29:  Oh ? That's a surprise . Let me see ... D 0411 Our dog's birthday . Yes , I'm sure this my parking space ! 
+30:  Oh , we've just repainted our car . It was red . 
+31:  Yeah . It used to . We got that fixed yesterday too . 
+32:  Sure , go ahead . 
+33:  That's all right . It's not your fault . 
+34:  I need to buy a new refrigerator today . 
+35:  I like that Kenmore refrigerator . 
+36:  Tell me about it . 
+37:  What are the appliances . 
+38:  I'd like to see it for myself . 
+39:  I like what I see . 
+40:  So what about the tennis racket ? 
+41:  How much did that end up costing you ? 
+42:  Hey , two for one . That's a super deal . 
+43:  I'm looking for someone who works here , but I lost his business card . His name's Long or Sang or something like that . 
+44:  Yeah , that sounds right . 
+45:  Let me think ... accounting , finance , something like that . 
+46:  That's him ! 
+47:  I appreciate your help . 
+48:  Here's my card . 
+49:  Yes , that's right . We want as much info as possible before we agree to anything . 
+50:  So , do you think our corporation will be eligible for this ? 
+51:  Just a minute . I ’ m putting on my clothes . 
+52:  Yes . Oh , dear , I can ’ t find my hairbrushes . Can you help me ? 
+53:  I put it in the dressing room . 
+54:  Yes , quite sure . 
+55:  Yes , I ’ Ve looked everywhere downstairs . 
+56:  Where ? 
+57:  I am just waiting for my friends . It won't be long . 
+58:  But I didn't see the sign , Ma ’ am . 
+59:  I didn't see it . 
+60:  Yes , I am . I always make a plan before I do anything . 
+61:  I don't want to have a specific title . I just want to enjoy what I am doing . 
+62:  It's the most important thing to me . 
+63:  That obviously depends on how things go - - whether I'm suited to the firm and the firm to me . 
+64:  I want to put my knowledge and experience to use in a challenging position . In order to achieve this goal , I just want to work step by step . 
+65:  I haven't thought it over at all . 
+66:  I think the most important thing is the interest in the job . 
+67:  Certainly . May I see your social security and your ID , please . 
+68:  Oh , current accounts don't pay out interest . 
+69:  It's primarily designed for business transactions . That is , writing checks to pay for bills , buying things and sending money . We won't expect a large amount of deposit in a current account . 
+70:  Good morning , Steven . 
+71:  It'll be a national campaign starting next week . 
+72:  I suggest that we focus on slice of life , showing how you can beat the summer heat by biting into a cool ice-cream sandwich . 
+73:  Definitely . 
+74:  That's fine . You must try this dish . 
+75:  It's fish steamed and served with our special sauce . 
+76:  Sure . It's a most popular dish . 
+77:  We have two dressings for salad . Which one would you like ? 
+78:  We have French and Thousand Island . 
+79:  Where will you go , sir ? 
+80:  OK , it's not far from here . 
+81:  Sure , I'll try my best . Here we are . 
+82:  The reading on the meter is 15 yuan . 
+83:  Thank you very much . 
+84:  Hi , Cindy . It ’ s Michael Kurt . Is Mr . Johnson in ? 
+85:  Yeah , that ’ ll be great . I ’ m on extension 4283 . 
+86:  Hi , Bill . I ’ d like to take the apartment I looked at yesterday . 
+87:  So , what do we do now ? 
+88:  Okay . ( Reads the lease ) So , according to the lease , I ’ ll deposit one month ’ s rent as a security deposit , and I have to pay the first month ’ s rent in advance . I understand that I ’ ll get the security deposit back when I move out if the apartment does not need any costly repairs . 
+89:  Can I pay you by check ? 
+90:  Is there a laundry room in the basement ? 
+91:  Can I sign the lease right now ? 
+92:  I'm thinking of travelling to Suzhou in July . Could you recommend some tourist programs for that ? 
+93:  How much does a six-day tour by train cost ? 
+94:  Does that include hotels and meals ? 
+95:  That sounds reasonable . What about the five-day flying journey ? How much is that ? 
+96:  Covering all expenses ? 
+97:  Of course not . I'm just observing casual day . On Fridays , the company doesn't require us to wear formal business attire . 
+98:  We don't think so . Casual days are becoming more common , and we believe employees can maintain a professional image without wearing uncomfortable clothes . 
+99:  Not really . Besides , there is a separate dress code for casual day . People can't just wear whatever they want . 
+100:  Believe it or not , it has the opposite effect . Employees are actually more productive on casual days . 
+101:  Hello , Lucy , this is Monica . I ’ m calling for the accountant position . I saw the information about the vacancy on your company ’ s website . Is it still available ? 
+102:  No , not yet . First , I want to check about the availability and see if you could give more information . 
+103:  The notification period of my current job is not that long and I ’ m quite profession to English and I am happy with the traveling abroad as I ’ m good dealing with the people from other cultures . It makes the whole job even more interesting . I will send my resume to you still this week . 
+104:  Yes , do you have any rooms available ? 
+105:  No . I need a double and three triples . My family is waiting for me in the car . 
+106:  Ok ... Here you are . 
+107:  Is breakfast included ? 
+108:  I stayed home because I wasn't feeling well . 
+109:  My stomach was bothering me . 
+110:  I'm still feeling a little sick . 
+111:  I'd appreciate that . 
+112:  Including my keys ? 
+113:  All right . What shall I do now ? 
+114:  I've got film in my bag . 
+115:  That's fine . 
+116:  Sure . Here you are . 
+117:  Am I through now ? 
+118:  Thank you and goodbye . 
+119:  I ’ d like extra prints made of these photos . 
+120:  Yes.Here they are . I ’ Ve marked how many prints I want on each shot . 
+121:  Four by six , except this one . I want a ten by thirteen print of this one . 
+122:  I'm interested in taking a tour to Sydney . 
+123:  How much does it cost ? 
+124:  Does that include the insurance ? 
+125:  Like wise . Take a seat , please . How about a cup of tea ? 
+126:  Yes , it's not too bad . Our sales are going up year after year . And we still have a large potential production capacity . 
+127:  That's a good idea . So far , we have several agents abroad . 
+128:  That sounds good . 
+129:  Usually , we give a commission of 4 % to our agents . 
+130:  Don't worry . We'll allow you a higher commission rate if your sales score a substantial increase . 
+131:  It sounds OK . Then how do you pay the commission ? 
+132:  All right . If it's okay , we would like to sign an agency agreement with you immediately . 
+133:  Thank you for your help . 
+134:  I'm sorry . These batteries are not on sale . 
+135:  I'm sorry . If you look at the ad again , you'll see that the other brand is on sale . 
+136:  Yes , many people make that mistake . 
+137:  You're right . Many ads are like that . 
+138:  Just one second , and I'll give you the batteries that are on sale . 
+139:  I don't have a girlfriend . I'm single . 
+140:  No , I like being single . I never thought lonely , I'm focus on my career . Maybe I'll start to look for my girl when I achieve success . 
+141:  Because I'm living a real world , a man enriched have a good career and make a lot of money . Franklin speaking the girls I've met wounldn't married a man wounldn't make enough money . 
+142:  Yeah , I ’ Ve been meaning to talk to you about that . I might need to ask for an extension on that deadline . 
+143:  Well , the thing is , we ran into a lot of problems . . . 
+144:  I know , and I apologize for the delay . But some things were just beyond my control . I had trouble booking the photographer , and then Michael was sick for three weeks , so I couldn ’ t include him in the photos , and the design team lost all the files , so I had to re-do the pictures . 
+145:  Can I have Mr . J . Smith paged ? He said he'd be in the main dining room . I'm Mr . J . B . White . 
+146:  Mr . J . Smith . 
+147:  To the front desk . 
+148:  That ’ s what I am here for . What questions can I answer for you ? 
+149:  The best product is Techne , and you can buy either the lotion or cream . 
+150:  The cream form is very popular . 
+151:  You could also take an antihistamine to help the rash go away quicker . 
+152:  Anytime you have a question , please feel free to ask . 
+153:  Yes . What's the problem ? 
+154:  Oh , I am very sorry about that . It's our fault . I will arrange someone to correct it immediately . 
+155:  Anyway , we apologize for the inconvenience we have brought you . Please just wait for a moment , and it will be fixed . 
+156:  Whose name did you pick ? 
+157:  Booze ! 
+158:  No , the steak was recommended , but it is not very fresh . 
+159:  This is very annoying . 
+160:  No , I don't risk it . 
+161:  I'm not keen on dessert as a habit . They are fattening . 
+162:  No , I'm Mary . 
+163:  No , I'm in Class There . 
+164:  There's an airsickness bag behind the seat that's in front of you . 
+165:  Is this your first time flying ? 
+166:  Oh , it's a beautiful city . I think you'll like it . 
+167:  Sometimes if you don't think about it , that sick feeling will go away on its own . 
+168:  I'm Frank . Nice to meet you . 
+169:  Hi ! Let me get a dozen croissants , four blueberry muffins and a loaf of sourdough bread . 
+170:  No , that's OK . Do you have any whole wheat bread ? 
+171:  Sure that sounds good . Do you have any cakes ? 
+172:  I'll just take a cheesecake . 
+173:  Yes . 
+174:  Thank you , Mr . Jackson , ladies and gentlemen , colleagues , friends . The subject of my talk is international relations in a morgen world . I plan to say a few words about the current situation in the Middle East and how it affects world economy . I'd like to give you an overview of the way that the economies of seemingly unrelated countries are intertwined . I've divided my talk into three parts , first an overview of international relations , second a discussion of current political situations , and lastly trends for the future . My presentation will take about two hours , but there will be a twenty-minute break in the middle . We'll stop for lunch at 12 . 
+175:  I couldn't sleep well recently . 
+176:  I always drink too much wine in the evening . 
+177:  Yes , you are right . 
+178:  Many thanks for your advice . 
+179:  Hello Dr Peters . Just fine thank you . Ricky and I are here for his vaccines . 
+180:  What about Rubella and Mumps ? 
+181:  OK , great . Doctor , I think I also may need a Tetanus booster . Last time I got it was maybe fifteen years ago ! 
+182:  Great . Are you a qualified teacher ? 
+183:  What kind of teaching certificate do you have ? 
+184:  How many years of experience do you have ? 
+185:  When did you get your TEFL certificate ? 
+186:  Why do you want to teach at our school ? 
+187:  That ’ s great . Can you speak Chinese ? 
+188:  Can you come in for an interview tomorrow at 10:00 ? 
+189:  Great . See you then . 
+190:  What's going on ? 
+191:  More and more people easily get irritated while driving . 
+192:  That ’ s great . What are the prizes ? 
+193:  To encourage the staff increases . 
+194:  What about the afternoon ? 
+195:  Ah , hello . I'm calling to find out how I apply for a car loan . 
+196:  Yes , I do . It's ready and waiting in my account . 
+197:  Could I just stop you there ? Sorry to interrupt , but I have already been to your appointed dealer and selected the car I want . 
+198:  Yes , it's 110,000 RIB . So , with the down payment done , I will need to borrow 70,000 RIB . 
+199:  Yes , I have everything here . OK , I'll come in and see you later today . Maybe I could have my new car as early as next week ! How exciting ! 
+200:  Tom , the new sales representative ? Nice to meet you ! I'm Melinda . 
+201:  Now let me show you around . This is our reception area , and our conference room is right over there . Over here is the sales department . 
+202:  Yeah ... You can make photocopies and send faxes over there . 
+203:  I tell you what just between you and me , we just mess things up so that it looks like we work hard.Just kidding . Oh , your cubicle is over the . And this way . Those are all private offices the managers offices . 
+204:  Sure thing . 
+205:  Your price has gone up sharply , hasn't it ? 
+206:  I agree with you there , but your price is unreasonable . 
+207:  I don't think we'll be able to pay the price . To have this business concluded , you need to lower your price at least by 3 % . 
+208:  Don't you agree with me that in the long run , moderate prices will bring about large sales and more profit ? 
+209:  Is that all ? 
+210:  I'm sorry we can't handle the price you offered . 
