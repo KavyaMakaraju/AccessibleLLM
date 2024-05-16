@@ -20,7 +20,7 @@ The output is the model's generated response to each input prompt. The response 
 Example:
 ```
 Output: Yes, there is a bank near here.
-
+```
 #### Ground Truth
 The ground truth, or reference, is the actual response from the dataset that the model is expected to generate. In this context, the reference responses are extracted from the DailyDialog dataset, which contains human conversational dialogues.
 
