@@ -60,7 +60,7 @@ print(f"F1 Score: {results['f1']}")
 
 ![BERTScore Evaluation](./image.png)
 
-### End-to-End Pipeline Example
+### End-to-End Pipeline 
 
 1. **Install Necessary Libraries and Dependencies**
    ```python
@@ -234,9 +234,7 @@ Output: I don't understand.
 **Example from `references.txt`**:
 ```
 Conversation 1:
-Human: Good morning, sir.
-
- Is there a bank near here?
+Human: Good morning, sir. Is there a bank near here?
 Reference: There is one . 5 blocks away from here?
 Human: Well, that's too far. Can you change some money for me?
 Reference: Surely, of course. What kind of currency have you got?
