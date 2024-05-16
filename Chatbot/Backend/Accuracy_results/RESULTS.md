@@ -1,18 +1,18 @@
+### Documentation
 
 #### Model
 The model used in this code is the `unsloth/llama-2-7b` model, which is accessed through Hugging Face's `transformers` library.
 
+#### Prompt Input
+The input to the model consists of conversational prompts formatted with a system prompt. Each conversation turn is processed where:
+- The human input is prefixed with "Human: ".
+- The formatted prompt includes both the system prompt and the human input.
 
-### Prompt Input
-The prompt sent to the language model (LLM) is a formatted string that includes both the system prompt and the human input. The system prompt sets the context and instructions for the model, while the human input represents the user's message.
-
-Example of the formatted prompt:
+Example:
 ```
-You are a conversation AI assistant named Jack that helps other humans in developing their conversational skills. You are friendly and truthful and keep the conversation candid. Give only a SINGLE response to the human input.
-
 Human: Good morning, sir. Is there a bank near here?
+System Prompt: You are a conversation AI assistant named Jack that helps other humans in developing their conversational skills. You are friendly and truthful and keep the conversation candid. Give only a SINGLE response to the human input.
 ```
-
 
 #### Output
 The output is the model's generated response to each input prompt. The response is formatted to include the model's persona as "Jack" and is expected to be a single, coherent response to the human input.
@@ -59,9 +59,9 @@ print(f"F1 Score: {results['f1']}")
 - **Average Recall**: 0.75
 - **Average F1 Score**: 0.76
 
-![BERTScore Evaluation](image.png)
+![BERTScore Evaluation](./image.png)
 
-### End-to-End Pipeline 
+### End-to-End Pipeline Example
 
 1. **Install Necessary Libraries and Dependencies**
    ```python
@@ -217,3 +217,30 @@ print(f"F1 Score: {results['f1']}")
    display(FileLink(r'predictions.txt'))
    display(FileLink(r'references.txt'))
    ```
+
+### Predictions and References
+The `predictions.txt` file contains the model's generated responses for each conversation, while the `references.txt` file contains the actual responses from the dataset. Below are examples from each file for a single conversation:
+
+**Example from `predictions.txt`**:
+```
+Conversation 1:
+Human: Good morning, sir. Is there a bank near here?
+Output: Yes, there is a bank near here.
+Human: Well, that's too far. Can you change some money for me?
+Output: Sure, I can change some money for you.
+Human: RIB.
+Output: I don't understand.
+```
+
+**Example from `references.txt`**:
+```
+Conversation 1:
+Human: Good morning, sir.
+
+ Is there a bank near here?
+Reference: There is one . 5 blocks away from here?
+Human: Well, that's too far. Can you change some money for me?
+Reference: Surely, of course. What kind of currency have you got?
+Human: RIB.
+Reference: How much would you like to change?
+```
