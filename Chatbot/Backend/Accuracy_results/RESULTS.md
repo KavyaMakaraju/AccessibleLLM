@@ -1,4 +1,3 @@
-### Documentation
 
 #### Model
 The model used in this code is the `unsloth/llama-2-7b` model, which is accessed through Hugging Face's `transformers` library.
@@ -227,12 +226,3 @@ You are a conversation AI assistant named Jack that helps other humans in develo
 
 Human: Good morning, sir. Is there a bank near here?
 ```
-
-### BERTScore Evaluation Chart
-Below is a visual representation of the BERTScore evaluation for the model's performance across conversation turns. The chart shows precision, recall, and F1 scores for
-
- each turn.
-
-![BERTScore Evaluation](./image.png)
-
-This chart provides a visual understanding of how well the model's outputs align with the references, with higher scores indicating better performance.
