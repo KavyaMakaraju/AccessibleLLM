@@ -59,4 +59,4 @@ Average F1 score 0.76
 Average recall 0.75
 
 
-![BERTScore Evaluation Chart](Chatbot/Backend/Accuracy_results/Screenshot 2024-05-16 at 15-02-55 Scope documentation _v1.png)
+![Alt Text](Chatbot/Backend/Accuracy_results/Screenshot 2024-05-16 at 15-02-55 Scope documentation _v1.png)
