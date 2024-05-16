@@ -1,4 +1,3 @@
-### Documentation
 
 #### Model
 The model used in this code is the `unsloth/llama-2-7b` model, which is accessed through Hugging Face's `transformers` library.
