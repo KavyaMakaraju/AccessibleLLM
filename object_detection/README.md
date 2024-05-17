@@ -74,7 +74,7 @@ display(image)
 from transformers import AutoProcessor, Blip2ForConditionalGeneration
 import torch
 processor = AutoProcessor.from_pretrained("Salesforce/blip-image-captioning-base")
-model = Blip2ForConditionalGeneration.from_pretrained("Salesforce/blip-image-captioning-base", torch_dtype=torch.float16)
+model = Blip2ForConditionalGeneration.from_pretrained("Salesforce/blip-image-captioning-base")
 ```
 ```python
 device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -110,41 +110,6 @@ Audio("generated_text.mp3")
   2. Modify the 'max_length' and 'min_length' parameters for the desired caption length.
 
 ---
-### **Models Used**
-<details>
-<summary>Model 1 : salesforce/blip2-opt-2.7b</summary>
-
-- **About the model**: BLIP-2 consists of a CLIP-like image encoder, a Querying Transformer (Q-Former), and a large language model.
-  - Visual Question Answering
-  - Chat-like conversations by feeding the image and the previous conversation as prompt to the model
-  - Image Captioning
-- **Usage**: You can use this model for conditional and un-conditional image captioning. The model consists of 2.7 billion parameters and is very huge in size.
-- **Location**: The model can be accessed from Salesforce Hugging Face library
-  - [blip2-opt-2.7b](https://huggingface.co/Salesforce/blip2-opt-2.7b)
-</details>
-
-<details>
-<summary>Model 2 : nlpconnect/vit-gpt2-image-captioning</summary>
-
-- **About the model**: This is an image captioning model trained by [@ydshieh](https://huggingface.co/ydshieh) in Flax. It produces reasonable image captioning results. It was mainly fine-tuned as a proof-of-concept for the 🤗 FlaxVisionEncoderDecoder Framework.
-- **Usage**: The model is used for image captioning.
-- **Location**: The model can be accessed from
-  - [vit-gpt-image-captioning](https://huggingface.co/nlpconnect/vit-gpt2-image-captioning)
-</details>
-
-<details>
-<summary>Model 3 : Salesforce/blip-image-captioning-base</summary>
-
-- **About the model**: A Salesforce model which can be used for
-  - Visual Question Answering
-  - Image-Text retrieval (Image-text matching)
-  - Image Captioning
-- **Usage**: For our use case, we use the model for image captioning. Because of its smaller size compared to blip2-opt-2.7b, it is easier to train and produces almost alike captions.
-- **Location**: The model can be accessed from
-  - [blip-image-captioning-base](https://huggingface.co/Salesforce/blip-image-captioning-base)
-</details>
-
---- 
 ### **Accuracy Metrics**
 <details>
   <summary>Metrics used</summary>
@@ -166,28 +131,32 @@ For checking the accuracy of the models, we have used different metrics like:
 - CLIPScore: A reference free metric that can be used to evaluate the correlation between a generated caption for an image and the actual content of the image
 </details>
 
-**The accuracy metrics comparing the BLIP model and VitGpt model yield the below results:**
+---
+
+### **Models Used**
 >[!note]
->Dataset used: [dataset (50 images and captions)](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/dataset3.zip)  
+>Dataset used for the first 2 models: [dataset (50 images and captions)](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/dataset3.zip)  
 
 <details>
-<summary>Results</summary>
+<summary>Model 1 : salesforce/blip2-opt-2.7b</summary>
 
-1. **BERTScore**: 
-    - BLIP:
-        - Precision: 0.7260
-        - Recall: 0.7872
-        - F1-score: 0.7541
-    - VitGpt:
-        - Precision: 0.6246
-        - Recall: 0.6585
-        - F1-score: 0.6362
-        
-2. **ROUGE Score**: 
-    - BLIP:
-        - <details>
-          <summary>ROUGE Score(BLIP)</summary>
-          
+- **About the model**: BLIP-2 consists of a CLIP-like image encoder, a Querying Transformer (Q-Former), and a large language model.
+  - Visual Question Answering
+  - Chat-like conversations by feeding the image and the previous conversation as prompt to the model
+  - Image Captioning
+- **Usage**: You can use this model for conditional and un-conditional image captioning. The model consists of 2.7 billion parameters and is very huge in size.
+- **Location**: The model can be accessed from Salesforce Hugging Face library
+  - [blip2-opt-2.7b](https://huggingface.co/Salesforce/blip2-opt-2.7b)
+
+1. **BERTScore**:
+    - Precision: 0.7260
+    - Recall: 0.7872
+    - F1-score: 0.7541
+   
+3. **ROUGE Score**: 
+     - <details>
+       <summary>ROUGE Score(BLIP)</summary> 
+       
           ``` 
           - ROUGE-1:
               - Precision: 0.5711694838529204
@@ -203,41 +172,18 @@ For checking the accuracy of the models, we have used different metrics like:
               - F1-score:  0.560635915103244
           ```
           </details>
-        
-    - VitGpt:
-        - <details>
-          <summary>ROUGE Score(VitGpt)</summary>
-          
-          ``` 
-          - ROUGE-1:
-              - Precision: 0.4042870038458274
-              - Recall: 0.44236701370524906
-              - F1-score: 0.41503899617383466
-          - ROUGE-2:
-              - Precision: 0.16989874025183618
-              - Recall: 0.20881120625160865
-              - F1-score: 0.18336638637340974
-          - ROUGE-L:
-              - Precision: 0.3620736453089395
-              - Recall:  0.39817976304741015
-              - F1-score:  0.37246338708799215
-          ```
-          </details>
 
 3. **BLEU Score**:
-    - BLIP: 0.2853194240578867
-    - VitGpt: 0.09539884316244567
-  
+   - 0.2853194240578867
+
 4. **GLEU Score**:
-    - BLIP: 0.3281658319708012
-    - VitGpt: 0.15503852724900705
-      
+    - 0.3281658319708012
+
 5. **CLIPScore**:
-    - BLIP(scaled score):
-        - <details>
-          <summary>CLIPScore(BLIP)</summary>
-          
-          ``` 
+    - <details>
+      <summary>CLIPScore(BLIP)</summary>  
+      
+      ``` 
           CLIP Score for 1.jpg: 64.91
           CLIP Score for 10.jpg: 66.08
           CLIP Score for 11.jpg: 65.31
@@ -288,14 +234,58 @@ For checking the accuracy of the models, we have used different metrics like:
           CLIP Score for 7.jpg: 69.39
           CLIP Score for 8.jpg: 64.43
           CLIP Score for 9.jpg: 63.49
-          ```
-          </details>
+      ```
+      </details>
+      
+To view the code and the resulting accuracies [click here](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/accuracymetrics.ipynb)
 
-    - VitGpt(scaled score):
-        - <details>
-          <summary>CLIPScore(VitGpt)</summary>
+</details>
+
+<details>
+
+<summary>Model 2 : nlpconnect/vit-gpt2-image-captioning</summary>
+
+- **About the model**: This is an image captioning model trained by [@ydshieh](https://huggingface.co/ydshieh) in Flax. It produces reasonable image captioning results. It was mainly fine-tuned as a proof-of-concept for the 🤗 FlaxVisionEncoderDecoder Framework.
+- **Usage**: The model is used for image captioning.
+- **Location**: The model can be accessed from
+  - [vit-gpt-image-captioning](https://huggingface.co/nlpconnect/vit-gpt2-image-captioning)
+ 
+1. **BERTScore**: 
+    - Precision: 0.6246
+    - Recall: 0.6585
+    - F1-score: 0.6362
+
+2. **ROUGE Score**: 
+   - <details>
+     <summary>ROUGE Score(VitGpt)</summary>
           
-          ``` 
+      ``` 
+          - ROUGE-1:
+              - Precision: 0.4042870038458274
+              - Recall: 0.44236701370524906
+              - F1-score: 0.41503899617383466
+          - ROUGE-2:
+              - Precision: 0.16989874025183618
+              - Recall: 0.20881120625160865
+              - F1-score: 0.18336638637340974
+          - ROUGE-L:
+              - Precision: 0.3620736453089395
+              - Recall:  0.39817976304741015
+              - F1-score:  0.37246338708799215
+      ```
+     </details>
+
+3. **BLEU Score**:
+    - 0.09539884316244567
+  
+4. **GLEU Score**:
+    - 0.15503852724900705
+
+5. **CLIPScore**:
+   - <details>
+     <summary>CLIPScore(VitGpt)</summary>
+          
+      ``` 
           CLIP Score for 1.jpg: 64.58
           CLIP Score for 10.jpg: 65.52
           CLIP Score for 11.jpg: 64.85
@@ -346,25 +336,35 @@ For checking the accuracy of the models, we have used different metrics like:
           CLIP Score for 7.jpg: 66.45
           CLIP Score for 8.jpg: 62.39
           CLIP Score for 9.jpg: 61.55
-          ```
-          </details>
+      ```
+     </details>
+     
+To view the code and the resulting accuracies [click here](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/accuracymetrics.ipynb)
 
 </details>
 
-To view the code and the resulting accuracies [click here](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/accuracymetrics.ipynb)
-
----
-
-### **Model Training** 
-
-The **salesforce/blip-image-captioning-base model** is trained to increase the accuracy for this specific usecase. The dataset consists of 1250 images and captions. It is a custom dataset of pictures which are taken from a first person point of view. 
-
 >[!NOTE]
->The dataset is by the name [arian2502/firstdataset](https://huggingface.co/datasets/arian2502/firstdataset)
+>The dataset for the below model is [arian2502/firstdataset](https://huggingface.co/datasets/arian2502/firstdataset)
+>>The trained model can be found on HuggingFace. the name of the model is [arian2502/blip-icb-finetuned](https://huggingface.co/arian2502/blip-icb-finetuned)
 
 <details>
- <summary>Training Steps</summary>
+  <summary>Model 3 : Salesforce/blip-image-captioning-base</summary>
+
+
+- **About the model**: A Salesforce model which can be used for
+  - Visual Question Answering
+  - Image-Text retrieval (Image-text matching)
+  - Image Captioning
+- **Usage**: For our use case, we use the model for image captioning. Because of its smaller size compared to blip2-opt-2.7b, it is easier to train and produces almost alike captions.
+- **Location**: The model can be accessed from
+  - [blip-image-captioning-base](https://huggingface.co/Salesforce/blip-image-captioning-base)
+ 
+## **Model Training** 
+<details>
+  <summary>Model training steps</summary>
   
+The **salesforce/blip-image-captioning-base model** is trained to increase the accuracy for this specific usecase. The dataset consists of 1250 images and captions. It is a custom dataset of pictures which are taken from a first person point of view. 
+
 1.The dataset is imported.
 
 2.The dataset is converted into a pytorch dataset via tha following code: 
@@ -446,12 +446,10 @@ print(generated_caption)
 6.Trained model is saved and uploaded/downloaded.
 
 For the full working of the code [click here](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/trained.ipynb)
+
 </details>
 
-**Trained Model Accuracy Metrics**
-
->[!NOTE]
->The trained model can be found on HuggingFace. the name of the model is [arian2502/blip-icb-finetuned](https://huggingface.co/arian2502/blip-icb-finetuned)
+## **Trained Model Accuracy Metrics**
 
 <details>
   <summary>Results</summary>
@@ -516,9 +514,13 @@ For the full working of the code [click here](https://github.com/Yaswanth-B/Acce
     - BLIP(trained): 0.6954368111617628
 
 
+Click [here](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/accuracymetrics(trained).ipynb) to view the code
+
+</details>
 </details>
 
 ---
+
 ### Dependencies
 <details>
 <summary>Libraries and Dependencies</summary>
