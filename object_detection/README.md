@@ -71,10 +71,10 @@ image = image.resize((596, 437))
 display(image)
 ```
 ```python
-from transformers import AutoProcessor, Blip2ForConditionalGeneration
+from transformers import AutoProcessor, BlipForConditionalGeneration
 import torch
 processor = AutoProcessor.from_pretrained("Salesforce/blip-image-captioning-base")
-model = Blip2ForConditionalGeneration.from_pretrained("Salesforce/blip-image-captioning-base")
+model = BlipForConditionalGeneration.from_pretrained("Salesforce/blip-image-captioning-base")
 ```
 ```python
 device = "cuda" if torch.cuda.is_available() else "cpu"
