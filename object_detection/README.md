@@ -581,6 +581,8 @@ Click [here](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detect
     - Output: ![Screenshot 2024-05-20 155410](https://github.com/Yaswanth-B/AccessibleLLM/assets/154512247/df545547-911e-4f22-91ab-925667525792)
       
   </details>
+
+[click here](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/main.py) to view the code.
   
 ---
 ### Dependencies
