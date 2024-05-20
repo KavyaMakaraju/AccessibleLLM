@@ -521,6 +521,68 @@ Click [here](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detect
 
 ---
 
+## **FAST API CODE**
+
+**API Endpoints**
+
+- **POST /capture_photo/**
+  <details>
+    <summary>Photo Capture</summary>
+    
+  - Description: Captures the photo from the users device
+  - Request Body:
+      ```python
+      async def capture_photo():
+    global cap
+
+    ret, frame = cap.read()
+    if not ret:
+        return {"error": "Failed to capture image."}
+
+    filename = os.path.join(folder, 'photo.jpg')
+    cv2.imwrite(filename, frame)
+
+    return FileResponse(filename)
+      ```
+  - Output: ![Screenshot 2024-05-20 155346](https://github.com/Yaswanth-B/AccessibleLLM/assets/154512247/b109ea09-41bb-413d-b761-1887bd4e1f2a)
+    
+  </details>
+      
+- **POST /generate_caption/**
+  <details>
+    <summary>Image Captioning</summary>
+    
+    - Description: Generates caption for the photo captured
+    - Request Body:
+      ```python
+      async def generate_caption(folder_path: str = 'C:\\Users\\aryan\\OneDrive\\Desktop\\object_detection\\photos'):
+      # List all files in the folder
+      image_files = os.listdir(folder_path)
+    
+      if not image_files:
+          return JSONResponse(status_code=404, content={"message": "No photos found in the specified folder."})
+      
+      # Select the first image for generating caption
+      selected_file = image_files[0]
+      file_path = os.path.join(folder_path, selected_file)
+      
+      # Open and resize the image
+      image = Image.open(file_path).convert('RGB')
+      image = image.resize((596, 437))
+      
+      # Caption generation
+      inputs = processor(image, return_tensors="pt").to(device, torch.float32)
+      generated_ids = model.generate(**inputs, max_length=50, min_length=20)
+
+      generated_text = processor.batch_decode(generated_ids, skip_special_tokens=True)[0].strip()    
+  
+      return {"caption": generated_text}
+      ```
+    - Output: ![Screenshot 2024-05-20 155410](https://github.com/Yaswanth-B/AccessibleLLM/assets/154512247/df545547-911e-4f22-91ab-925667525792)
+      
+  </details>
+  
+---
 ### Dependencies
 <details>
 <summary>Libraries and Dependencies</summary>
