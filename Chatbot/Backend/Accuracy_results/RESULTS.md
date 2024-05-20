@@ -1,6 +1,6 @@
 
 #### Model
-The model used in this code is the `unsloth/llama-2-7b` model, which is accessed through Hugging Face's `transformers` library.
+The models used in this code is the `unsloth/llama-2-7b` model, which is accessed through Hugging Face's `transformers` library.
 
 #### Prompt Input
 The input to the model consists of conversational prompts formatted with a system prompt. Each conversation turn is processed where:
@@ -39,6 +39,14 @@ BERTScore is a metric used to evaluate the quality of text generation models. It
 
 In this code, the BERTScore is computed using the `evaluate` library, which compares the model's predictions against the references and provides the precision, recall, and F1 scores for a comprehensive evaluation of the model's performance.
 
+### Model scores
+
+| Model | Average precision | Average F1 score | Average recall |
+|-|-|-|-|
+| Llama 2 | 0.83 | 0.83 | 0.83 |
+| Unsloth Llama 2 | 0.52 | 0.52 | 0.51 |
+| Unsloth Mistral | 0.80 | 0.79| 0.78 |
+| Unsloth Gemma  | 0.77 | 0.76 | 0.76|
 ### Code Snippet:
 ```python
 from evaluate import load
@@ -83,8 +91,9 @@ print(f"F1 Score: {results['f1']}")
    load_in_4bit = True # Use 4bit quantization to reduce memory usage.
 
    # Initialize the model and tokenizer
+   model_name = "unsloth/mistral-7b-bnb-4bit"
    model, tokenizer = FastLanguageModel.from_pretrained(
-       model_name="unsloth/mistral-7b-bnb-4bit",
+       model_name=model_name,
        max_seq_length=max_seq_length,
        dtype=dtype,
        load_in_4bit=load_in_4bit
@@ -241,3 +250,6 @@ Reference: Surely, of course. What kind of currency have you got?
 Human: RIB.
 Reference: How much would you like to change?
 ```
+
+
+

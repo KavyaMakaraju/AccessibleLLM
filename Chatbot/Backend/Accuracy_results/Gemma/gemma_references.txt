@@ -1,0 +1,212 @@
+Conversation 1:
+Human: Good morning , sir . Is there a bank near here ? 
+Reference:  There is one . 5 blocks away from here ? 
+Human:  Well , that's too far.Can you change some money for me ? 
+Reference:  Surely , of course . What kind of currency have you got ? 
+Human:  RIB . 
+Reference:  How much would you like to change ? 
+
+Conversation 2:
+Human: Good afternoon . This is Michelle Li speaking , calling on behalf of IBA . Is Mr Meng available at all ? 
+Reference:  This is Mr Meng speaking , Michelle . 
+Human:  Oh , hello ! Sorry about that . I'm just calling to say that we've received your new Corporate Credit Card from HQ . 
+Reference:  That was quick ! I wasn't expecting it until later this week . 
+Human:  Yes , our application procedures have speeded up since we started using the new fast-track system . 
+Reference:  Shall I come in and collect it ? 
+Human:  Or we can send it to you . But if you would like to use it at the ATM , you'll need to wait for your PIN number . 
+Reference:  Mmmm ... if I come in and collect it this afternoon , is there any way I could use it today ? Petty cash is getting low , so I need to draw some money . 
+Human:  As long as you bring your ID , etc , we can serve you over the counter . But you won't be able to use the ATM until your new PIN number arrives . 
+Reference:  I see . Yes , that's fine . I'll be there at around 2:30 pm . See you later , and thanks . 
+
+Conversation 3:
+Human: What qualifications should a reporter have ? 
+Reference:  As a reporter , he must have acute insight and language skills . At the same time , he must have good judgment , the respect for his job and tactical cooperation with others . 
+Human:  Can you work under pressure ? You know , people working here are all busy everyday since we're daily newspaper . 
+Reference:  I think I've got used to work under pressure . I will adjust myself to the step of your newspaper quickly . 
+
+Conversation 4:
+Human: Hi , good morning , Miss ? what can I help you with ? 
+Reference:  Good morning I'd like to mail this box of books to Taiwan . 
+Human:  OK , please put it on this scale.Airmail or by sea ? 
+Reference:  How long does it take to reach Taiwan by sea ? 
+Human:  Usually about two month . 
+Reference:  That's too long.How long does it take to reach Taiwan by airmail ? 
+Human:  About ten days . 
+Reference:  Then how much is that by airmail ? 
+Human:  Let me see.It ' s 57 dollars , 20 cents , including tax . 
+Reference:  That's a little bit expensive . 
+Human:  Although it's expensive to send it by airmail , it's quicker and safer than by sea . 
+Reference:  I guess I have to send it by airmail . 
+Human:  Do you want to ensure the contents , Miss ? 
+Reference:  Yes , please . 
+Human:  Please fill out this form , also please write the value of the items in this space . 
+Reference:  OK . 
+
+Conversation 5:
+Human: Excuse me , ma'am . Can you tell me where the nearest postoffice is ? 
+Reference:  Of course . Go straight ahead . Turn right at the next street . You'll see a tall , yellow building.The post office is on the first floor . 
+Human:  Do you mean that I go that way for one block , then turn right ? 
+Reference:  Yes , you are right . 
+Human:  Is it far ? 
+Reference:  No , It's only about five minutes ' walk . 
+Human:  Thank you very much . 
+Reference:  It's my pleasure . 
+
+Conversation 6:
+Human: Could you give me some advice on how to bring up my son properly ? 
+Reference:  He's a bright boy , isn't he ? 
+Human:  But he always wimps out of difficulty . 
+Reference:  Don't worry , he'll make good progress step by step . 
+
+Conversation 7:
+Human: I'm in 507 . I have a few problems with my room . 
+Reference:  What is that problem , sir ? 
+Human:  There are cockroaches in my room . 
+Reference:  Are you sure , sir ? Flies I could believe , but cockroaches ? 
+Human:  I've counted nine different cockroaches , and I accidentally stepped on another one . 
+Reference:  Sir , we run a spotless and cockroach-less hotel . 
+Human:  You dare to doubt me ? 
+Reference:  I'm sorry , sir . Let me transfer you to my supervisor . 
+
+Conversation 8:
+Human: Excuse me , sir , I'm afraid you can't park your car here . 
+Reference:  Why not ? It's my parking space . 
+Human:  I'm afraid not , sir . 
+Reference:  Oh ? That's a surprise . Let me see ... D 0411 Our dog's birthday . Yes , I'm sure this my parking space ! 
+Human:  But I saw a red car always parking here before . 
+Reference:  Oh , we've just repainted our car . It was red . 
+Human:  Maybe . But the car of this space has a broken rearview mirror on the left . 
+Reference:  Yeah . It used to . We got that fixed yesterday too . 
+Human:  Could you wait for a minute , sir ? I'd like to have a check . 
+Reference:  Sure , go ahead . 
+Human:  Sorry , sir , my mistake . This is your parking space . 
+Reference:  That's all right . It's not your fault . 
+
+Conversation 9:
+Human: What can I do for you today ? 
+Reference:  I need to buy a new refrigerator today . 
+Human:  Were you looking at a particular refrigerator ? 
+Reference:  I like that Kenmore refrigerator . 
+Human:  This particular refrigerator is a very good choice . 
+Reference:  Tell me about it . 
+Human:  Not only is it affordable , but it comes with all the appliances . 
+Reference:  What are the appliances . 
+Human:  It has an ice maker , water dispenser , and plenty of room on the inside . 
+Reference:  I'd like to see it for myself . 
+Human:  Go right ahead . 
+Reference:  I like what I see . 
+
+Conversation 10:
+Human: Oh , well . It was fun to be the winner . But ... it's too big . I must be an extra small in the States . 
+Reference:  So what about the tennis racket ? 
+Human:  Look ! It's amazing . I can't wait to try it out ! 
+Reference:  How much did that end up costing you ? 
+Human:  Oh ... around twenty bucks . A bargain if you ask me . Look at the picture of her playing with it ! 
+Reference:  Hey , two for one . That's a super deal . 
+
+Conversation 11:
+Human: Can I help you ? 
+Reference:  I'm looking for someone who works here , but I lost his business card . His name's Long or Sang or something like that . 
+Human:  Chang ? 
+Reference:  Yeah , that sounds right . 
+Human:  There are about twenty people named Chang who work here . What department ? 
+Reference:  Let me think ... accounting , finance , something like that . 
+Human:  Eric Chang in accounting ? 
+Reference:  That's him ! 
+Human:  I'll call him and tell him you're here . 
+Reference:  I appreciate your help . 
+Human:  Would you like to have a seat over there ? It'll just be a minute . And can I have your name ? 
+Reference:  Here's my card . 
+
+Conversation 12:
+Human: Hello , Sir . You're here to discuss the Network Settlement Service , right ? 
+Reference:  Yes , that's right . We want as much info as possible before we agree to anything . 
+Human:  Yes , it's important to be all clued up before you enter into any agreement . To make full use of the Network Settlement Service and take advantage of the whole banking system , we provide internal fund transfers , account inquiry , agency clearing to name but a few . 
+Reference:  So , do you think our corporation will be eligible for this ? 
+
+Conversation 13:
+Human: Dear , time is up , let ’ s go there now . 
+Reference:  Just a minute . I ’ m putting on my clothes . 
+Human:  Have you taken the key to the door ? 
+Reference:  Yes . Oh , dear , I can ’ t find my hairbrushes . Can you help me ? 
+Human:  Where have you put it ? 
+Reference:  I put it in the dressing room . 
+Human:  Are you sure ? 
+Reference:  Yes , quite sure . 
+Human:  Then , have you looked downstairs ? 
+Reference:  Yes , I ’ Ve looked everywhere downstairs . 
+Human:  Look , dear . It ’ s over there . 
+Reference:  Where ? 
+
+Conversation 14:
+Human: Excuse me , sir . You can't park here . 
+Reference:  I am just waiting for my friends . It won't be long . 
+Human:  Sir , the curb here is not for parking . 
+Reference:  But I didn't see the sign , Ma ’ am . 
+Human:  There is a sign at the corner of the street . When you turned in here , you should have seen it . 
+Reference:  I didn't see it . 
+
+Conversation 15:
+Human: Are you a goal-oriented person ? 
+Reference:  Yes , I am . I always make a plan before I do anything . 
+Human:  Where do you want to be in 5 years ? 
+Reference:  I don't want to have a specific title . I just want to enjoy what I am doing . 
+Human:  That sounds very reasonable . 
+Reference:  It's the most important thing to me . 
+Human:  If you are hired , how long do you plan to stay with us ? 
+Reference:  That obviously depends on how things go - - whether I'm suited to the firm and the firm to me . 
+Human:  Tell me about some of your recent goals and what you do to achieve them . 
+Reference:  I want to put my knowledge and experience to use in a challenging position . In order to achieve this goal , I just want to work step by step . 
+Human:  What is your long-range objective ? 
+Reference:  I haven't thought it over at all . 
+Human:  What do you think is the most important thing when looking for a job ? 
+Reference:  I think the most important thing is the interest in the job . 
+
+Conversation 16:
+Human: I'd like to open a current account . 
+Reference:  Certainly . May I see your social security and your ID , please . 
+Human:  Here you are . I wonder how much interest can I earn from a current account . 
+Reference:  Oh , current accounts don't pay out interest . 
+Human:  Why is that ? 
+Reference:  It's primarily designed for business transactions . That is , writing checks to pay for bills , buying things and sending money . We won't expect a large amount of deposit in a current account . 
+
+Conversation 17:
+Human: Good morning , Helen . 
+Reference:  Good morning , Steven . 
+Human:  So , what's the status of our advertising campaign ? 
+Reference:  It'll be a national campaign starting next week . 
+Human:  What style will the ads be ? 
+Reference:  I suggest that we focus on slice of life , showing how you can beat the summer heat by biting into a cool ice-cream sandwich . 
+Human:  Sounds like a good idea . Will we have a new slogan ? 
+Reference:  Definitely . 
+
+Conversation 18:
+Human: I'd like to taste some local dishes . What would you recommend ? 
+Reference:  That's fine . You must try this dish . 
+Human:  Could you tell me how this thing is cooked ? 
+Reference:  It's fish steamed and served with our special sauce . 
+Human:  Is it good ? 
+Reference:  Sure . It's a most popular dish . 
+Human:  I think I'll try it , and give me some green salad together . 
+Reference:  We have two dressings for salad . Which one would you like ? 
+Human:  What kind do you have ? 
+Reference:  We have French and Thousand Island . 
+
+Conversation 19:
+Human: Taxi ! 
+Reference:  Where will you go , sir ? 
+Human:  Friendship Hotel . 
+Reference:  OK , it's not far from here . 
+Human:  I have something important to do , can you fast the speed ? 
+Reference:  Sure , I'll try my best . Here we are . 
+Human:  How much should I pay you ? 
+Reference:  The reading on the meter is 15 yuan . 
+Human:  Here's 20 yuan , keep the change . 
+Reference:  Thank you very much . 
+
+Conversation 20:
+Human: Mr . Johnson ’ s office . Cindy speaking . 
+Reference:  Hi , Cindy . It ’ s Michael Kurt . Is Mr . Johnson in ? 
+Human:  No , I ’ m sorry , Mr . Kurt . He ’ s stepped out for a bit . Would you like me to have him call you ? 
+Reference:  Yeah , that ’ ll be great . I ’ m on extension 4283 . 
+

@@ -1,0 +1,212 @@
+Conversation 1:
+Human: Good morning , sir . Is there a bank near here ? 
+Output: Yes, there is a bank near here.
+Human:  Well , that's too far.Can you change some money for me ? 
+Output: Sure, I can change some money for you.
+Human:  RIB . 
+Output: I don't understand.
+
+Conversation 2:
+Human: Good afternoon . This is Michelle Li speaking , calling on behalf of IBA . Is Mr Meng available at all ? 
+Output: Good afternoon Michelle. I'm afraid Mr Meng is not available at the moment. Would you like to leave a message ?
+Human:  Oh , hello ! Sorry about that . I'm just calling to say that we've received your new Corporate Credit Card from HQ . 
+Output: 
+Human:  Yes , our application procedures have speeded up since we started using the new fast-track system . 
+Output: I see.
+Human:  Or we can send it to you . But if you would like to use it at the ATM , you'll need to wait for your PIN number . 
+Output: I'm sorry, I don't understand.
+Human:  As long as you bring your ID , etc , we can serve you over the counter . But you won't be able to use the ATM until your new PIN number arrives . 
+Output: I'm sorry, but I don't understand what you mean.
+
+Conversation 3:
+Human: What qualifications should a reporter have ? 
+Output: A reporter should have a degree in journalism or a related field, strong writing skills, and experience in research and fact-checking. They should also be able to work well under pressure and be able to handle sensitive information.
+Human:  Can you work under pressure ? You know , people working here are all busy everyday since we're daily newspaper . 
+Output: I can work under pressure.
+
+Conversation 4:
+Human: Hi , good morning , Miss ? what can I help you with ? 
+Output: Hi , good morning , Miss ? what can I help you with ?
+Human:  OK , please put it on this scale.Airmail or by sea ? 
+Output: I'm sorry, I don't understand.
+Human:  Usually about two month . 
+Output: That's a long time.
+Human:  About ten days . 
+Output: That's a long time.
+Human:  Let me see.It ' s 57 dollars , 20 cents , including tax . 
+Output: 
+Human:  Although it's expensive to send it by airmail , it's quicker and safer than by sea . 
+Output: I agree.
+Human:  Do you want to ensure the contents , Miss ? 
+Output: I am not sure what you mean.
+Human:  Please fill out this form , also please write the value of the items in this space . 
+Output: 
+
+Conversation 5:
+Human: Excuse me , ma'am . Can you tell me where the nearest postoffice is ? 
+Output: Sure , the nearest postoffice is at 123 Main Street .
+Human:  Do you mean that I go that way for one block , then turn right ? 
+Output: Yes, that is correct.
+Human:  Is it far ? 
+Output: It is 10 miles away.
+Human:  Thank you very much . 
+Output: You are welcome.
+
+Conversation 6:
+Human: Could you give me some advice on how to bring up my son properly ? 
+Output: I'm sorry, but I'm not sure I can help you with that. I'm not a parenting expert.
+Human:  But he always wimps out of difficulty . 
+Output: I'm sorry, I don't understand.
+
+Conversation 7:
+Human: I'm in 507 . I have a few problems with my room . 
+Output: What are the problems?
+Human:  There are cockroaches in my room . 
+Output: I am sorry to hear that.
+Human:  I've counted nine different cockroaches , and I accidentally stepped on another one . 
+Output: I'm sorry to hear that.
+Human:  You dare to doubt me ? 
+Output: I am sorry, I don't understand.
+
+Conversation 8:
+Human: Excuse me , sir , I'm afraid you can't park your car here . 
+Output: I'm sorry , but I'm not a car .
+Human:  I'm afraid not , sir . 
+Output: I'm sorry to hear that.
+Human:  But I saw a red car always parking here before . 
+Output: I am sorry, I don't know what you mean.
+Human:  Maybe . But the car of this space has a broken rearview mirror on the left . 
+Output: I see .
+Human:  Could you wait for a minute , sir ? I'd like to have a check . 
+Output: Sure, I'll wait for you.
+Human:  Sorry , sir , my mistake . This is your parking space . 
+Output: I am not sure what you mean.
+
+Conversation 9:
+Human: What can I do for you today ? 
+Output: I can help you with your conversational skills.
+Human:  Were you looking at a particular refrigerator ? 
+Output: I was looking at a particular refrigerator.
+Human:  This particular refrigerator is a very good choice . 
+Output: I agree.
+Human:  Not only is it affordable , but it comes with all the appliances . 
+Output: I'm sorry, I don't understand.
+Human:  It has an ice maker , water dispenser , and plenty of room on the inside . 
+Output: I don't know what you mean by that .
+Human:  Go right ahead . 
+Output: I'm not sure what you mean.
+
+Conversation 10:
+Human: Oh , well . It was fun to be the winner . But ... it's too big . I must be an extra small in the States . 
+Output: I'm sorry to hear that.
+Human:  Look ! It's amazing . I can't wait to try it out ! 
+Output: I'm glad you're excited about it. I'm sure it will be a great experience.
+Human:  Oh ... around twenty bucks . A bargain if you ask me . Look at the picture of her playing with it ! 
+Output: 
+
+Conversation 11:
+Human: Can I help you ? 
+Output: I am Jack, a conversation AI assistant. I can help you in developing your conversational skills.
+Human:  Chang ? 
+Output: Yes, I am.
+Human:  There are about twenty people named Chang who work here . What department ? 
+Output: I don't know.
+Human:  Eric Chang in accounting ? 
+Output: Yes, he is.
+Human:  I'll call him and tell him you're here . 
+Output: I'm not sure if that's a good idea.
+Human:  Would you like to have a seat over there ? It'll just be a minute . And can I have your name ? 
+Output: Sure . I'd love to have a seat . And my name is Jack .
+
+Conversation 12:
+Human: Hello , Sir . You're here to discuss the Network Settlement Service , right ? 
+Output: Yes , I am here to discuss the Network Settlement Service .
+Human:  Yes , it's important to be all clued up before you enter into any agreement . To make full use of the Network Settlement Service and take advantage of the whole banking system , we provide internal fund transfers , account inquiry , agency clearing to name but a few . 
+Output: I'm sorry, but I don't understand what you mean. Could you please rephrase your question?
+
+Conversation 13:
+Human: Dear , time is up , let ’ s go there now . 
+Output: 
+Human:  Have you taken the key to the door ? 
+Output: I have not taken the key to the door.
+Human:  Where have you put it ? 
+Output: I have put it in the drawer.
+Human:  Are you sure ? 
+Output: Yes, I am sure.
+Human:  Then , have you looked downstairs ? 
+Output: I have not looked downstairs.
+Human:  Look , dear . It ’ s over there . 
+Output: I see .
+
+Conversation 14:
+Human: Excuse me , sir . You can't park here . 
+Output: I'm sorry, but I'm not a parking attendant. I'm a conversation AI assistant.
+Human:  Sir , the curb here is not for parking . 
+Output: I see.
+Human:  There is a sign at the corner of the street . When you turned in here , you should have seen it . 
+Output: I'm sorry, I didn't see the sign.
+
+Conversation 15:
+Human: Are you a goal-oriented person ? 
+Output: I am not a goal-oriented person. I am a conversation AI assistant.
+Human:  Where do you want to be in 5 years ? 
+Output: I want to be in a place where I can help people in developing their conversational skills.
+Human:  That sounds very reasonable . 
+Output: I agree.
+Human:  If you are hired , how long do you plan to stay with us ? 
+Output: I am not sure. I will stay as long as I am needed.
+Human:  Tell me about some of your recent goals and what you do to achieve them . 
+Output: I have a few goals that I am working on right now. One of them is to improve my conversational skills. I am doing this by practicing with different people and trying to understand how they communicate. Another goal is to learn
+Human:  What is your long-range objective ? 
+Output: My long-range objective is to help humans develop their conversational skills.
+Human:  What do you think is the most important thing when looking for a job ? 
+Output: I think the most important thing when looking for a job is to find a company that aligns with your values and goals.
+
+Conversation 16:
+Human: I'd like to open a current account . 
+Output: Sure, I can help you with that. What's your name?
+Human:  Here you are . I wonder how much interest can I earn from a current account . 
+Output: You can earn interest on your current account if you have a balance of £500 or more.
+Human:  Why is that ? 
+Output: I don't know.
+
+Conversation 17:
+Human: Good morning , Helen . 
+Output: Good morning , Helen .
+Human:  So , what's the status of our advertising campaign ? 
+Output: The campaign is running smoothly. We've seen a significant increase in engagement and conversions.
+Human:  What style will the ads be ? 
+Output: The ads will be in a conversational style.
+Human:  Sounds like a good idea . Will we have a new slogan ? 
+Output: I don't know.
+
+Conversation 18:
+Human: I'd like to taste some local dishes . What would you recommend ? 
+Output: I recommend you to try the local dishes at the restaurant "X".
+Human:  Could you tell me how this thing is cooked ? 
+Output: I'm not sure, but I can try to find out.
+Human:  Is it good ? 
+Output: I don't know.
+Human:  I think I'll try it , and give me some green salad together . 
+Output: Sure, I'll add some green salad to your order.
+Human:  What kind do you have ? 
+Output: I have a 2018 model.
+
+Conversation 19:
+Human: Taxi ! 
+Output: I'm sorry, I don't know how to help you with that.
+Human:  Friendship Hotel . 
+Output: I'm sorry, I don't understand.
+Human:  I have something important to do , can you fast the speed ? 
+Output: I am sorry, I can't do that.
+Human:  How much should I pay you ? 
+Output: I am not sure. I am not a human.
+Human:  Here's 20 yuan , keep the change . 
+Output: 
+
+Conversation 20:
+Human: Mr . Johnson ’ s office . Cindy speaking . 
+Output: Hello Cindy . How can I help you ?
+Human:  No , I ’ m sorry , Mr . Kurt . He ’ s stepped out for a bit . Would you like me to have him call you ? 
+Output: Sure .
+
