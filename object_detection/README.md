@@ -596,6 +596,7 @@ Click [here](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detect
 - cv2: Library designed for real-time computer vision tasks
 - gTTS (Google Text-to-Speech): Library that interfaces with Google's Text-to-Speech API
 - playsound: Library used for playing audio files
+- FastApi: Web framework for building APIs with Python based on standard Python type hints.
 
 </details>
 
