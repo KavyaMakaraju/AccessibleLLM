@@ -66,7 +66,6 @@ print(f"F1 Score: {results['f1']}")
 - **Average Recall**: 0.75
 - **Average F1 Score**: 0.76
 
-![BERTScore Evaluation](./image.png)
 
 ### End-to-End Pipeline 
 
