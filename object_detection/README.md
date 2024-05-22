@@ -42,9 +42,9 @@ Saving the Caption as Audio: In addition to the text file, the caption is also c
         
   - Model 3 : Salesforce/blip-image-captioning-base
       - About the model
-      - Model training
+      - [Model training](#model-training)
           - Model training steps
-      - Trained model accuracy metrics
+      - [Trained model accuracy metrics](#trained-model-accuracy-metrics)
           - untrained and trained model accuracies
 
 5)[FAST API Code](#fast-api-code)
