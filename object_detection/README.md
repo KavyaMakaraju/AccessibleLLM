@@ -545,6 +545,10 @@ Click [here](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detect
 
 ## **FAST API CODE**
 
+<details>
+  <summary>Procedure</summary>
+
+---  
 **Dependencies**
 
 <details>
@@ -624,7 +628,9 @@ The below libraries are required to run the code API and its endpoints.
   </details>
 
 [click here](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/main.py) to view the code.
-  
+
+</details>
+
 ---
 ### Dependencies
 <details>
