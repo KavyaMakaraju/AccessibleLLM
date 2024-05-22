@@ -68,7 +68,9 @@ Saving the Caption as Audio: In addition to the text file, the caption is also c
   <summary>Setup steps</summary>
 
 >Run the notebooks on GPU for smoother and faster performance
-  
+
+---
+
 - **Install the needed Dependencies**
 ```python
 !pip install git+https://github.com/huggingface/transformers.git 
@@ -103,7 +105,8 @@ import time
 ### Usage
 <details>
   <summary>Usage steps</summary>
-  
+
+---  
 - **Capture the image-Run the following code to capture an image using your webcam:**
 ```python
 #capturing image code
@@ -172,6 +175,8 @@ Audio("generated_text.mp3")
 ### Accuracy Metrics
 <details>
   <summary>Metrics used</summary>
+
+---  
 For checking the accuracy of the models, we have used different metrics like:
 - BERTScore : an automatic evaluation metric used for testing the goodness of text generation systems. It produces the following output values in the range of 0.0 to 1.0:
         - Precision
@@ -197,6 +202,8 @@ For checking the accuracy of the models, we have used different metrics like:
 <details>
 <summary>Model 1 : salesforce/blip2-opt-2.7b</summary>
 
+---
+
 - **About the model**: BLIP-2 consists of a CLIP-like image encoder, a Querying Transformer (Q-Former), and a large language model.
   - Visual Question Answering
   - Chat-like conversations by feeding the image and the previous conversation as prompt to the model
@@ -205,29 +212,25 @@ For checking the accuracy of the models, we have used different metrics like:
 - **Location**: The model can be accessed from Salesforce Hugging Face library
   - [blip2-opt-2.7b](https://huggingface.co/Salesforce/blip2-opt-2.7b)
 
+---
 >Dataset used for the model: [dataset (50 images and captions)](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/dataset3.zip) 
-1. **BERTScore**:
 
-| Precision | Recall | F1-score |
-|-----------------|-----------------|-----------------|
-| 0.7269 | 0.7872 | 0.7541 |
-   
-2. **ROUGE Score**:
-   
-| Metric  | Precision              | Recall                 | F1-score                |
+| BERTScore | Precision | Recall | F1-score |
+|-----------------|-----------------|-----------------|-----------------|
+|| 0.7269 | 0.7872 | 0.7541 |
+      
+| ROUGE Metric  | Precision              | Recall                 | F1-score                |
 |---------|------------------------|------------------------|-------------------------|
 | ROUGE-1 | 0.5711694838529204     | 0.7057404605198723     | 0.6259112389882882      |
 | ROUGE-2 | 0.35838442697653206    | 0.46176681935195857    | 0.39949114886886683     |
 | ROUGE-L | 0.5119797835463471     | 0.6315150650003591     | 0.560635915103244       |
 
-
-| BLEU | GLEU |
+| BLEU Score| GLEU Score|
 |-----------------|-----------------|
 | 0.2853194240578867 | 0.3281658319708012 |
    
-
-5. **CLIPScore**:
-    - <details>
+**CLIPScore**:
+  - <details>
       <summary>CLIPScore(BLIP)</summary>  
       
       ``` 
@@ -286,53 +289,42 @@ For checking the accuracy of the models, we have used different metrics like:
       
 To view the code and the resulting accuracies [click here](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/accuracymetrics.ipynb)
 
+---
+
 </details>
 
 <details>
 
 <summary>Model 2 : nlpconnect/vit-gpt2-image-captioning</summary>
 
+---
+
 - **About the model**: This is an image captioning model trained by [@ydshieh](https://huggingface.co/ydshieh) in Flax. It produces reasonable image captioning results. It was mainly fine-tuned as a proof-of-concept for the 🤗 FlaxVisionEncoderDecoder Framework.
 - **Usage**: The model is used for image captioning.
 - **Location**: The model can be accessed from
   - [vit-gpt-image-captioning](https://huggingface.co/nlpconnect/vit-gpt2-image-captioning)
 
+---
 >Dataset used for the model: [dataset (50 images and captions)](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/dataset3.zip) 
- 
-1. **BERTScore**: 
-    - Precision: 0.6246
-    - Recall: 0.6585
-    - F1-score: 0.6362
 
-2. **ROUGE Score**: 
-   - <details>
-     <summary>ROUGE Score(VitGpt)</summary>
-          
-      ``` 
-          - ROUGE-1:
-              - Precision: 0.4042870038458274
-              - Recall: 0.44236701370524906
-              - F1-score: 0.41503899617383466
-          - ROUGE-2:
-              - Precision: 0.16989874025183618
-              - Recall: 0.20881120625160865
-              - F1-score: 0.18336638637340974
-          - ROUGE-L:
-              - Precision: 0.3620736453089395
-              - Recall:  0.39817976304741015
-              - F1-score:  0.37246338708799215
-      ```
-     </details>
+| BERTScore | Precision | Recall | F1-score |
+|-----------------|-----------------|-----------------|-----------------|
+|| 0.6246 | 0.6585 | 0.6362 |
+      
+| ROUGE Metric  | Precision              | Recall                 | F1-score                |
+|---------|------------------------|------------------------|-------------------------|
+| ROUGE-1 | 0.4042870038458274     | 0.44236701370524906    | 0.41503899617383466     |
+| ROUGE-2 | 0.16989874025183618   | 0.20881120625160865    | 0.18336638637340974     |
+| ROUGE-L | 0.3620736453089395     | 0.39817976304741015    | 0.37246338708799215      |
 
-3. **BLEU Score**:
-    - 0.09539884316244567
-  
-4. **GLEU Score**:
-    - 0.15503852724900705
+| BLEU Score| GLEU Score|
+|-----------------|-----------------|
+| 0.09539884316244567 | 0.15503852724900705 |
 
-5. **CLIPScore**:
-   - <details>
-     <summary>CLIPScore(VitGpt)</summary>
+
+**CLIPScore**:
+  - <details>
+    <summary>CLIPScore(VitGpt)</summary>
           
       ``` 
           CLIP Score for 1.jpg: 64.58
@@ -390,11 +382,14 @@ To view the code and the resulting accuracies [click here](https://github.com/Ya
      
 To view the code and the resulting accuracies [click here](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/accuracymetrics.ipynb)
 
+---
+
 </details>
 
 <details>
   <summary>Model 3 : Salesforce/blip-image-captioning-base</summary>
 
+---
 
 - **About the model**: A Salesforce model which can be used for
   - Visual Question Answering
@@ -412,7 +407,8 @@ To view the code and the resulting accuracies [click here](https://github.com/Ya
 
 <details>
   <summary>Model training steps</summary>
-  
+
+---  
 The **salesforce/blip-image-captioning-base model** is trained to increase the accuracy for this specific usecase. The dataset consists of 1250 images and captions. It is a custom dataset of pictures which are taken from a first person point of view. 
 
 1.The dataset is imported.
@@ -507,67 +503,35 @@ For the full working of the code [click here](https://github.com/Yaswanth-B/Acce
 <details>
   <summary>Results</summary>
 
-1. **BERTScore**: 
-    - BLIP(untrained):
-        - Precision: 0.5309
-        - Recall: 0.6051
-        - F1-score: 0.5637
-    - BLIP(trained):
-        - Precision: 0.8848
-        - Recall: 0.8886
-        - F1-score: 0.8854
-        
-2. **ROUGE Score**: 
-    - BLIP(untrained):
-        - <details>
-          <summary>ROUGE Score(untrained)</summary>
-          
-          ``` 
-          - ROUGE-1:
-              - Precision: 0.26676010739518513
-              - Recall: 0.3862308472077113
-              - F1-score: 0.3066864136993266
-          - ROUGE-2:
-              - Precision: 0.0725541792011556
-              - Recall: 0.1298950742068691
-              - F1-score: 0.08984282440623012
-          - ROUGE-L:
-              - Precision: 0.23059880787255438
-              - Recall:   0.3364418769543522
-              - F1-score:  0.2657411209552809
-          ```
-          </details>
-        
-    - BLIP(trained):
-        - <details>
-          <summary>ROUGE Score(trained)</summary>
-          
-          ``` 
-          - ROUGE-1:
-              - Precision: 0.6806757571022624
-              - Recall: 0.7300539801249587
-              - F1-score: 0.6995404673734046
-          - ROUGE-2:
-              - Precision: 0.577443416297378
-              - Recall: 0.6493630657374209
-              - F1-score: 0.6069535829964249
-          - ROUGE-L:
-              - Precision: 0.6730824339010327
-              - Recall:  0.7226284310678925
-              - F1-score:  0.6922038904392883
-          ```
-          </details>
+---
 
-3. **BLEU Score**:
-    - BLIP(untrained): 0.04215093904464002
-    - BLIP(trained): 0.704256378969982
-  
-4. **GLEU Score**:
-    - BLIP(untrained): 0.08593777080376051
-    - BLIP(trained): 0.6954368111617628
+| BERTScore | Precision | Recall | F1-score |
+|-----------------|-----------------|-----------------|-----------------|
+|Untrained| 0.5309 | 0.6051 | 0.5637 |
+|trained| 0.8848 | 0.8886 | 0.8854 |
 
+      
+| ROUGE (untrained) | ROUGE-1              | ROUGE-2                | ROUGE-L    |            
+|---------|------------------------|------------------------|-------------------------|       
+| Precision | 0.26676010739518513     | 0.0725541792011556    | 0.23059880787255438     |    
+| Recall | 0.3862308472077113  | 0.1298950742068691    | 0.3364418769543522     |
+| F1-score | 0.3066864136993266     | 0.08984282440623012    | 0.2657411209552809     |
+
+| ROUGE (trained) | ROUGE-1              | ROUGE-2                | ROUGE-L    |            
+|---------|------------------------|------------------------|-------------------------|       
+| Precision | 0.6806757571022624    | 0.577443416297378   | 0.6730824339010327    |    
+| Recall | 0.7300539801249587   | 0.6493630657374209   |  0.7226284310678925     |
+| F1-score | 0.6995404673734046    | 0.6069535829964249   | 0.6922038904392883      |
+
+
+| Metric | untrained | trained |
+|-----------------|-----------------|-----------------|
+| BLEU | 0.04215093904464002 | 0.704256378969982 |
+| GLEU | 0.08593777080376051 | 0.6954368111617628 |
+        
 
 Click [here](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/accuracymetrics(trained).ipynb) to view the code
+
 
 </details>
 </details>
