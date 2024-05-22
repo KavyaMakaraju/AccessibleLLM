@@ -61,7 +61,7 @@ Saving the Caption as Audio: In addition to the text file, the caption is also c
 6)Dependencies
 
 
-# setup
+# Setup
 
 <details>
   <summary>Setup steps</summary>
