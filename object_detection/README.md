@@ -42,9 +42,9 @@ Saving the Caption as Audio: In addition to the text file, the caption is also c
         
   - Model 3 : Salesforce/blip-image-captioning-base
       - About the model
-      - [Model training](#model-training)
+      - Model training
           - Model training steps
-      - [Trained model accuracy metrics](#trained-model-accuracy-metrics)
+      - Trained model accuracy metrics
           - untrained and trained model accuracies
 
 5)[FAST API Code](#fast-api-code)
@@ -60,6 +60,7 @@ Saving the Caption as Audio: In addition to the text file, the caption is also c
 
 6)[Dependencies](#dependencies)
 
+--- 
 
 ### Setup
 
@@ -206,35 +207,24 @@ For checking the accuracy of the models, we have used different metrics like:
 
 >Dataset used for the model: [dataset (50 images and captions)](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/dataset3.zip) 
 1. **BERTScore**:
-    - Precision: 0.7260
-    - Recall: 0.7872
-    - F1-score: 0.7541
+
+| Precision | Recall | F1-score |
+|-----------------|-----------------|-----------------|
+| 0.7269 | 0.7872 | 0.7541 |
    
-3. **ROUGE Score**: 
-     - <details>
-       <summary>ROUGE Score(BLIP)</summary> 
-       
-          ``` 
-          - ROUGE-1:
-              - Precision: 0.5711694838529204
-              - Recall: 0.7057404605198723
-              - F1-score: 0.6259112389882882
-          - ROUGE-2:
-              - Precision: 0.35838442697653206
-              - Recall: 0.46176681935195857
-              - F1-score: 0.39949114886886683
-          - ROUGE-L:
-              - Precision: 0.5119797835463471
-              - Recall:  0.6315150650003591
-              - F1-score:  0.560635915103244
-          ```
-          </details>
+2. **ROUGE Score**:
+   
+| Metric  | Precision              | Recall                 | F1-score                |
+|---------|------------------------|------------------------|-------------------------|
+| ROUGE-1 | 0.5711694838529204     | 0.7057404605198723     | 0.6259112389882882      |
+| ROUGE-2 | 0.35838442697653206    | 0.46176681935195857    | 0.39949114886886683     |
+| ROUGE-L | 0.5119797835463471     | 0.6315150650003591     | 0.560635915103244       |
 
-3. **BLEU Score**:
-   - 0.2853194240578867
 
-4. **GLEU Score**:
-    - 0.3281658319708012
+| BLEU | GLEU |
+|-----------------|-----------------|
+| 0.2853194240578867 | 0.3281658319708012 |
+   
 
 5. **CLIPScore**:
     - <details>
