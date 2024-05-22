@@ -15,6 +15,8 @@ Saving the Caption as Audio: In addition to the text file, the caption is also c
 ---
 
 ## **Table of Contents**
+<details>
+  <summary>Contents</summary>
 
 1)[Setup](#setup)
   - Dependencies and libraries installation
@@ -60,6 +62,8 @@ Saving the Caption as Audio: In addition to the text file, the caption is also c
       - Output
 
 6)[Dependencies](#dependencies)
+
+</details>
 
 --- 
 
