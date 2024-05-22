@@ -1,4 +1,4 @@
-<h1 align="center">Object Detection(Image-Caption-Audio)</h1>
+<h1 align="center">Image Captioning Model)</h1>
 
 ### Overview
 
