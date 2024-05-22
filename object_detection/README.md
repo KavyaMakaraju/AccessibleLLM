@@ -1,17 +1,72 @@
-## **Documentation for Object Detection Use Case**
+<h1 align="center">Object Detection(Image-Caption-Audio)</h1>
 
 ### Overview
 
-This project showcases how to capture an image, generate captions using a pre-trained BLIP model, and save the generated caption as text and audio.
+This project demonstrates a complete workflow for capturing an image, generating descriptive captions for it using a pre-trained BLIP (Bootstrapped Language-Image Pretraining) model, and then saving these captions in both text and audio formats. Here’s a detailed breakdown of each step involved:
+
+Image Capture: The process begins with capturing an image, which can be done using a camera of the device the user is using. This image serves as the input for the next stage.
+
+Caption Generation: Using the pre-trained BLIP model, which is designed to understand and describe visual content, the project generates a caption for the captured image. The BLIP model leverages its trained neural networks to analyze the image and produce a coherent and contextually relevant textual description.
+
+Saving the Caption as Text: Once the caption is generated, it is saved as a text file. This ensures that the generated caption can be accessed and edited
+
+Saving the Caption as Audio: In addition to the text file, the caption is also converted into an audio file. This is typically achieved using google text-to-speech (gTTS) technology, which reads the generated text aloud and saves the output as an audio file. This allows for greater accessibility, enabling users to listen to the description rather than read it.
+
 ---
 
-### **Setup**
+## **Table of Contents**
 
->[!TIP]
->Run the notebooks on GPU for smoother and faster performance
+1)[Setup](#setup)
+  - Dependencies and libraries installation
+    
+2)Usage
+  - Image capturing
+  - Image processing
+  - Image captioning and Audio generation
+    
+3)Accuracy Metrics
+  - BERTScore
+  - ROUGEScore
+  - BLEU Score
+  - GlEU Score
+  - CLIPScore
+
+4)Models Used
+  - Model 1 : salesforce/blip2-opt-2.7b
+      - About the model
+      - Accuracy
+        
+  - Model 2 : nlpconnect/vit-gpt2-image-captioning
+      - About the model
+      - Accuracy
+        
+  - Model 3 : Salesforce/blip-image-captioning-base
+      - About the model
+      - Model training
+          - Model training steps
+      - Trained model accuracy metrics
+          - untrained and trained model accuracies
+
+5)FAST API Code
+  - POST/capture_photo/
+      - Description
+      - Request body
+      - Output
+        
+  - POST/generate_caption/
+      - Description
+      - Request body
+      - Output
+
+6)Dependencies
+
+
+# setup
 
 <details>
   <summary>Setup steps</summary>
+
+>Run the notebooks on GPU for smoother and faster performance
   
 - **Install the needed Dependencies**
 ```python
@@ -45,7 +100,9 @@ import time
 ---
 
 ### Usage
-
+<details>
+  <summary>Usage steps</summary>
+  
 - **Capture the image-Run the following code to capture an image using your webcam:**
 ```python
 #capturing image code
@@ -60,7 +117,6 @@ except Exception as err:
   # grant the page permission to access it.
   print(str(err))
 ```
->[!IMPORTANT]
 >Ensure your system has a webcam and necessary permissions to capture images.
 
 - **Image Processing and Caption Generation-After capturing the image, use the following code to generate a caption:**
@@ -100,7 +156,7 @@ speech.save("generated_text.mp3")
 from playsound import playsound
 Audio("generated_text.mp3")
 ```
->[!TIP]
+
 >Modify language ('lang='en'') in 'gTTS' for different speech synthesis
 >
 >Adjust file paths and names based on your project structure.
@@ -109,8 +165,10 @@ Audio("generated_text.mp3")
   1. Adjust the image path (/path/to/photo.jpg) and model name ("Salesforce/blip-image-captioning-base") according to your setup.
   2. Modify the 'max_length' and 'min_length' parameters for the desired caption length.
 
+</details>
+
 ---
-### **Accuracy Metrics**
+### Accuracy Metrics
 <details>
   <summary>Metrics used</summary>
 For checking the accuracy of the models, we have used different metrics like:
@@ -133,9 +191,7 @@ For checking the accuracy of the models, we have used different metrics like:
 
 ---
 
-### **Models Used**
->[!note]
->Dataset used for the first 2 models: [dataset (50 images and captions)](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/dataset3.zip)  
+### Models Used 
 
 <details>
 <summary>Model 1 : salesforce/blip2-opt-2.7b</summary>
@@ -148,6 +204,7 @@ For checking the accuracy of the models, we have used different metrics like:
 - **Location**: The model can be accessed from Salesforce Hugging Face library
   - [blip2-opt-2.7b](https://huggingface.co/Salesforce/blip2-opt-2.7b)
 
+>Dataset used for the model: [dataset (50 images and captions)](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/dataset3.zip) 
 1. **BERTScore**:
     - Precision: 0.7260
     - Recall: 0.7872
@@ -249,6 +306,8 @@ To view the code and the resulting accuracies [click here](https://github.com/Ya
 - **Usage**: The model is used for image captioning.
 - **Location**: The model can be accessed from
   - [vit-gpt-image-captioning](https://huggingface.co/nlpconnect/vit-gpt2-image-captioning)
+
+>Dataset used for the model: [dataset (50 images and captions)](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/dataset3.zip) 
  
 1. **BERTScore**: 
     - Precision: 0.6246
@@ -343,10 +402,6 @@ To view the code and the resulting accuracies [click here](https://github.com/Ya
 
 </details>
 
->[!NOTE]
->The dataset for the below model is [arian2502/firstdataset](https://huggingface.co/datasets/arian2502/firstdataset)
->>The trained model can be found on HuggingFace. the name of the model is [arian2502/blip-icb-finetuned](https://huggingface.co/arian2502/blip-icb-finetuned)
-
 <details>
   <summary>Model 3 : Salesforce/blip-image-captioning-base</summary>
 
@@ -358,8 +413,13 @@ To view the code and the resulting accuracies [click here](https://github.com/Ya
 - **Usage**: For our use case, we use the model for image captioning. Because of its smaller size compared to blip2-opt-2.7b, it is easier to train and produces almost alike captions.
 - **Location**: The model can be accessed from
   - [blip-image-captioning-base](https://huggingface.co/Salesforce/blip-image-captioning-base)
- 
-## **Model Training** 
+
+--- 
+**Model Training**
+
+>The dataset for the model is [arian2502/firstdataset](https://huggingface.co/datasets/arian2502/firstdataset)
+>>The trained model can be found on HuggingFace. the name of the model is [arian2502/blip-icb-finetuned](https://huggingface.co/arian2502/blip-icb-finetuned)
+
 <details>
   <summary>Model training steps</summary>
   
@@ -445,11 +505,14 @@ print(generated_caption)
 
 6.Trained model is saved and uploaded/downloaded.
 
+>Time taken to train the model on 1250 images and captions for 10 epochs: 1 hour 8 minutes
+
 For the full working of the code [click here](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/trained.ipynb)
 
 </details>
 
-## **Trained Model Accuracy Metrics**
+---
+**Trained Model Accuracy Metrics**
 
 <details>
   <summary>Results</summary>
