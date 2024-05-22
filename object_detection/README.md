@@ -48,6 +48,7 @@ Saving the Caption as Audio: In addition to the text file, the caption is also c
           - untrained and trained model accuracies
 
 5)[FAST API Code](#fast-api-code)
+  - Dependencies
   - POST/capture_photo/
       - Description
       - Request body
@@ -539,6 +540,25 @@ Click [here](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detect
 ---
 
 ## **FAST API CODE**
+
+**Dependencies**
+
+<details>
+  <summary>libraries required</summary>
+The below libraries are required to run the code API and its endpoints. 
+
+  ```python
+    from fastapi import FastAPI
+    from fastapi.responses  import FileResponse, RedirectResponse, Response, JSONResponse
+    from typing import List
+    from pydantic import BaseModel
+    import os
+    import cv2
+    from PIL import Image
+    from transformers import AutoProcessor, BlipForConditionalGeneration
+    import torch
+  ```
+</details>
 
 **API Endpoints**
 
