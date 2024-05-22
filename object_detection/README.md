@@ -24,14 +24,14 @@ Saving the Caption as Audio: In addition to the text file, the caption is also c
   - Image processing
   - Image captioning and Audio generation
     
-3)[Accuracy Metrics](#
+3)[Accuracy Metrics](#accuracy-metrics)
   - BERTScore
   - ROUGEScore
   - BLEU Score
   - GlEU Score
   - CLIPScore
 
-4)Models Used
+4)[Models Used](#models-used)
   - Model 1 : salesforce/blip2-opt-2.7b
       - About the model
       - Accuracy
@@ -47,7 +47,7 @@ Saving the Caption as Audio: In addition to the text file, the caption is also c
       - Trained model accuracy metrics
           - untrained and trained model accuracies
 
-5)FAST API Code
+5)[FAST API Code](#fast-api-code)
   - POST/capture_photo/
       - Description
       - Request body
@@ -58,7 +58,7 @@ Saving the Caption as Audio: In addition to the text file, the caption is also c
       - Request body
       - Output
 
-6)Dependencies
+6)[Dependencies](#dependencies)
 
 
 ### Setup
