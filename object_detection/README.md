@@ -19,12 +19,12 @@ Saving the Caption as Audio: In addition to the text file, the caption is also c
 1)[Setup](#setup)
   - Dependencies and libraries installation
     
-2)Usage
+2)[Usage](#usage)
   - Image capturing
   - Image processing
   - Image captioning and Audio generation
     
-3)Accuracy Metrics
+3)[Accuracy Metrics](#
   - BERTScore
   - ROUGEScore
   - BLEU Score
@@ -61,7 +61,7 @@ Saving the Caption as Audio: In addition to the text file, the caption is also c
 6)Dependencies
 
 
-# Setup
+### Setup
 
 <details>
   <summary>Setup steps</summary>
