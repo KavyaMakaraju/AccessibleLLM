@@ -51,15 +51,11 @@ Saving the Caption as Audio: In addition to the text file, the caption is also c
 
 5)[FAST API Code](#fast-api-code)
   - Dependencies
-  - POST/capture_photo/
-      - Description
-      - Request body
-      - Output
-        
+  - POST/capture_photo/t
+  - GET/list_photos/
+  - POST/select_photo/
   - POST/generate_caption/
-      - Description
-      - Request body
-      - Output
+
 
 6)[Dependencies](#dependencies)
 
@@ -556,74 +552,155 @@ Click [here](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detect
 The below libraries are required to run the code API and its endpoints. 
 
   ```python
-    from fastapi import FastAPI
+    from fastapi import FastAPI, BackgroundTasks, HTTPException, File, UploadFile
     from fastapi.responses  import FileResponse, RedirectResponse, Response, JSONResponse
-    from typing import List
     from pydantic import BaseModel
     import os
     import cv2
     from PIL import Image
     from transformers import AutoProcessor, BlipForConditionalGeneration
     import torch
+    from gtts import gTTS
+    from playsound import playsound
   ```
 </details>
 
+---
 **API Endpoints**
 
-- **POST /capture_photo/**
+- **POST /start_capture/**
   <details>
     <summary>Photo Capture</summary>
     
-  - Description: Captures the photo from the users device
+  - Description: Captures photos on pressing "c" key and stops on "q" key from the users device
   - Request Body:
       ```python
-      async def capture_photo():
-    global cap
-
-    ret, frame = cap.read()
-    if not ret:
-        return {"error": "Failed to capture image."}
-
-    filename = os.path.join(folder, 'photo.jpg')
-    cv2.imwrite(filename, frame)
-
-    return FileResponse(filename)
-      ```
-  - Output: ![Screenshot 2024-05-20 155346](https://github.com/Yaswanth-B/AccessibleLLM/assets/154512247/b109ea09-41bb-413d-b761-1887bd4e1f2a)
+        print("Press 'c' to capture a photo and 'q' to quit.")
+        while True:
+            # Capture frame-by-frame
+            ret, frame = cap.read()
+            if not ret:
+                print("Failed to grab frame.")
+                break
     
+            # Display the resulting frame
+            cv2.imshow('Webcam', frame)
+    
+            # Wait for key event
+            key = cv2.waitKey(1) & 0xFF
+    
+            if key == ord('c'):
+                # Determine the next filename based on existing files in the folder
+                existing_files = [f for f in os.listdir(folder) if f.endswith('.jpg')]
+                next_number = len(existing_files) + 1
+                filename = os.path.join(folder, f'{next_number}.jpg')
+                
+                cv2.imwrite(filename, frame)
+                print(f"Photo captured and saved as {filename}")
+    
+            elif key == ord('q'):
+                print("Quitting...")
+                break
+
+    # When everything done, release the capture
+    cap.release()
+
+    cv2.destroyAllWindows()
+      ```
+  >on_event("startup") opens up the webcam as soon as the /start_capture/ is run.
+
+  - Output: ![Screenshot 2024-05-23 161044](https://github.com/Yaswanth-B/AccessibleLLM/assets/154512247/b963ab84-43db-41f0-ac8f-9902586add07)
+
   </details>
+
+- **GET /list_photos/**
+  <details>
+    <summary>List of photos in folder</summary>
+    
+  - Description: Shows a list of photos saved in the folder
+  - Request Body:
+      ```python
+      image_files = [f for f in os.listdir(folder) if f.endswith('.jpg')]
+      if not image_files:
+        return JSONResponse(status_code=404, content={"message": "No photos found in the specified folder."})
+    
+      return {"photos": image_files}
+      ```
       
+  -Output:![Screenshot 2024-05-23 161347](https://github.com/Yaswanth-B/AccessibleLLM/assets/154512247/d53eb166-767f-4e84-987c-fe41285cc195)
+  
+  </details>
+
+- **POST /select_photo/**
+  <details> 
+    <summary>Displaying selected photo</summary>
+    
+  - Description: Displays the photo which the user wants to see
+  - Request Body:
+      
+   ```python
+     file_path = os.path.join(folder, filename)
+     print(f"Looking for file at: {file_path}")  # Debugging statement
+     if not os.path.exists(file_path):
+         print("Photo not found.")  # Debugging statement
+         raise HTTPException(status_code=404, detail="Photo not found.")
+
+     image = Image.open(file_path).convert('RGB')
+     image = image.resize((596, 437))
+
+     # Save the image temporarily
+     temp_image_path = "temp_image.jpg"
+     image.save(temp_image_path)
+
+     # Return the image along with the generated caption
+     return FileResponse(temp_image_path, media_type="image/jpeg")
+  ```
+  
+    - Output:
+        - camera clicked: ![Screenshot 2024-05-23 161154](https://github.com/Yaswanth-B/AccessibleLLM/assets/154512247/e5e86db7-8c24-4c0a-a550-c57585aa865b)
+        - folder selected: ![Screenshot 2024-05-23 161429](https://github.com/Yaswanth-B/AccessibleLLM/assets/154512247/e85ad2e0-7431-4aff-a145-d77eedf23a9c)
+
+           
+    </details>
+
+    
 - **POST /generate_caption/**
   <details>
     <summary>Image Captioning</summary>
-    
+
     - Description: Generates caption for the photo captured
     - Request Body:
       ```python
-      async def generate_caption(folder_path: str = 'C:\\Users\\aryan\\OneDrive\\Desktop\\object_detection\\photos'):
-      # List all files in the folder
-      image_files = os.listdir(folder_path)
+      async def generate_caption(filename: str):
+          file_path = os.path.join(folder, filename)
+          print(f"Looking for file at: {file_path}")  # Debugging statement
+          if not os.path.exists(file_path):
+              print("Photo not found.")  # Debugging statement
+              raise HTTPException(status_code=404, detail="Photo not found.")
     
-      if not image_files:
-          return JSONResponse(status_code=404, content={"message": "No photos found in the specified folder."})
+          # Open and resize the image
+          image = Image.open(file_path).convert('RGB')
+          image = image.resize((596, 437))
+    
+          # Caption generation
+          inputs = processor(images=image, return_tensors="pt").to(device)
+          generated_ids = model.generate(**inputs, max_length=50, min_length=20)
+          generated_text = processor.batch_decode(generated_ids, skip_special_tokens=True)[0].strip()    
       
-      # Select the first image for generating caption
-      selected_file = image_files[0]
-      file_path = os.path.join(folder_path, selected_file)
+           # Text-to-speech conversion
+          speech = gTTS(text=generated_text, lang='en')
+          audio_file_path = "generated_text.mp3"
+          speech.save(audio_file_path)
       
-      # Open and resize the image
-      image = Image.open(file_path).convert('RGB')
-      image = image.resize((596, 437))
+          # Play the generated audio
+          playsound(audio_file_path)
       
-      # Caption generation
-      inputs = processor(image, return_tensors="pt").to(device, torch.float32)
-      generated_ids = model.generate(**inputs, max_length=50, min_length=20)
-
-      generated_text = processor.batch_decode(generated_ids, skip_special_tokens=True)[0].strip()    
-  
-      return {"caption": generated_text}
+          return {"caption": generated_text}
       ```
-    - Output: ![Screenshot 2024-05-20 155410](https://github.com/Yaswanth-B/AccessibleLLM/assets/154512247/df545547-911e-4f22-91ab-925667525792)
+      > The generated caption is given out in an audio format which will be audible to the user.
+      
+    - Output: from camera:![Screenshot 2024-05-23 161408](https://github.com/Yaswanth-B/AccessibleLLM/assets/154512247/f87cd43c-812b-4c0c-be26-db35591caf92)
+              from folder:![Screenshot 2024-05-23 161501](https://github.com/Yaswanth-B/AccessibleLLM/assets/154512247/4a12d890-9d57-4c2d-a956-df1b91fac5a5)
       
   </details>
 
