@@ -128,6 +128,8 @@ The dataset.zip file contains the following folders:
 - **Notebook**: Converts audios to text using Whisper and immediately corrects them using T5.
   - [Combined Model Notebook](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/Audio%20Video%20captioning/own-audios-whisper-T5.ipynb)
 
+## Fast API
+- **API Code**: The API code which converts audios to text using Whisper and immediately corrects them using T5 is available [here.](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/Audio%20Video%20captioning/app.py)
 
 ## Usage
 1. Run the model notebooks to train and evaluate the models.
