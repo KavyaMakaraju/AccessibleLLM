@@ -38,9 +38,9 @@ The dataset.zip file contains the following folders:
 - **Run 2**: Contains the model notebook and results in an Excel sheet which contains individual metrics for each audio too.
 - **Model Details**: facebook/wav2vec2-base-960h.
   - **Input**: Audio files present in dataset/Audio-to-text-whisper-dataset/Audio Files
-  - **Output**: Text transcriptions saved in
-      - Model1-wav2vec2/Run1/wav2vec2-base-960h-results.csv
-      - Model1-wav2vec2/Run2/wav2vec2-base960h-2ndtime.xlsx
+  - **Output**: Text transcriptions saved here
+  - [Transcriptions file](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/Audio%20Video%20captioning/Model1-Wav2Vec2/Run1/wav2vec2-base960h-results.csv)
+  - [Transcriptions along with the individual metrics](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/Audio%20Video%20captioning/Model1-Wav2Vec2/Run2/wav2vec2-base960h-2ndtime.xlsx)
   - **Time Taken for Model to Train**: 1 hour for 251 audio files
   - **Saved Model Weights**: The model is saved in the directory 'Model1-wav2vec2/saved-wav2vec2_model'
 - **Metrics**:
@@ -54,8 +54,7 @@ The dataset.zip file contains the following folders:
 - Contains the model notebook and results in a CSV file.
 - **Model Details**: facebook/wav2vec2-large-960h.
   - **Input**: Audio files present in dataset/Audio-to-text-whisper-dataset/Audio Files
-  - **Output**: Text transcriptions saved in:
-      - Model2-Wav2Vec2/wav2vec2-base-960h-results.csv
+  - **Output**: Text transcriptions saved [here.](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/Audio%20Video%20captioning/Model2-Wav2Vec2-Large960h/wav2vec2-large-960h-results.csv)
   - **Time Taken for Model to Train**: 1 hour for 251 audio files
   - **Saved Model Weights**: The model is saved in the directory 'Model2-Wav2Vec2-Large960h/saved-wav2vec2-large960h'
 - **Metrics**:
@@ -70,8 +69,7 @@ The dataset.zip file contains the following folders:
 - Contains the model notebook and results in a CSV file.
 - **Model Details**: facebook/wav2vec2-large-960h-lv60-self.
   - **Input**: Audio files present in dataset/Audio-to-text-whisper-dataset/Audio Files
-  - **Output**: Text transcriptions saved in:
-      - Model3-Wav2Vec2-Large960h-lv60-self/wav2vec2-large960h-lv60-self-results.csv
+  - **Output**: Text transcriptions saved [here.](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/Audio%20Video%20captioning/Model3-Wav2Vec2-Large960h-lv60-self/wav2vec2-large960h-lv60-self-results.csv)
   - **Time Taken for Model to Train**: 1 hour for 251 audio files
   - **Saved Model Weights**: The model is saved in the directory 'Model3-Wav2Vec2-Large960h-lv60-self/Saved-Wav2Vec2-Large960h-lv60-self'
 - **Metrics**:
@@ -98,7 +96,7 @@ The dataset.zip file contains the following folders:
 - Contains the model notebook and results in a CSV file along with the individual metrics for each audio.
 - **Model Details**: one can use model by using command `pip install -U openai-whisper`
   - **Input**: Audio files present in dataset/Audio-to-text-whisper-dataset/Audio Files
-  - **Output**: Text transcriptions are saved to Model5-whisper/whisper-model-results-xlsx.
+  - **Output**: The transcriptions along with individual metrics are saved [here.](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/Audio%20Video%20captioning/Model5-Whisper/whisper-model-results.xlsx)
   - **Time Taken for Model to Train**: 2 hours for 251 audio files
 - **Metrics**:
   - **Accuracy**: 93.40%
@@ -130,6 +128,8 @@ The dataset.zip file contains the following folders:
 - **Notebook**: Converts audios to text using Whisper and immediately corrects them using T5.
   - [Combined Model Notebook](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/Audio%20Video%20captioning/own-audios-whisper-T5.ipynb)
 
+## Fast API
+- **API Code**: The API code which converts audios to text using Whisper and immediately corrects them using T5 is available [here.](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/Audio%20Video%20captioning/app.py)
 
 ## Usage
 1. Run the model notebooks to train and evaluate the models.

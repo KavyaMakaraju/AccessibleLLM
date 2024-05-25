@@ -1,18 +1,77 @@
-## **Documentation for Object Detection Use Case**
+<h1 align="center">Image Captioning Model</h1>
 
 ### Overview
 
-This project showcases how to capture an image, generate captions using a pre-trained BLIP model, and save the generated caption as text and audio.
+This project demonstrates a complete workflow for capturing an image, generating descriptive captions for it using a pre-trained BLIP (Bootstrapped Language-Image Pretraining) model, and then saving these captions in both text and audio formats. Here’s a detailed breakdown of each step involved:
+
+Image Capture: The process begins with capturing an image, which can be done using a camera of the device the user is using. This image serves as the input for the next stage.
+
+Caption Generation: Using the pre-trained BLIP model, which is designed to understand and describe visual content, the project generates a caption for the captured image. The BLIP model leverages its trained neural networks to analyze the image and produce a coherent and contextually relevant textual description.
+
+Saving the Caption as Text: Once the caption is generated, it is saved as a text file. This ensures that the generated caption can be accessed and edited
+
+Saving the Caption as Audio: In addition to the text file, the caption is also converted into an audio file. This is typically achieved using google text-to-speech (gTTS) technology, which reads the generated text aloud and saves the output as an audio file. This allows for greater accessibility, enabling users to listen to the description rather than read it.
+
 ---
 
-### **Setup**
+## **Table of Contents**
+<details>
+  <summary>Contents</summary>
 
->[!TIP]
->Run the notebooks on GPU for smoother and faster performance
+1)[Setup](#setup)
+  - Dependencies and libraries installation
+    
+2)[Usage](#usage)
+  - Image capturing
+  - Image processing
+  - Image captioning and Audio generation
+    
+3)[Accuracy Metrics](#accuracy-metrics)
+  - BERTScore
+  - ROUGEScore
+  - BLEU Score
+  - GlEU Score
+  - CLIPScore
+
+4)[Models Used](#models-used)
+  - Model 1 : salesforce/blip2-opt-2.7b
+      - About the model
+      - Accuracy
+        
+  - Model 2 : nlpconnect/vit-gpt2-image-captioning
+      - About the model
+      - Accuracy
+        
+  - Model 3 : Salesforce/blip-image-captioning-base
+      - About the model
+      - Model training
+          - Model training steps
+      - Trained model accuracy metrics
+          - untrained and trained model accuracies
+
+5)[FAST API Code](#fast-api-code)
+  - Dependencies
+  - POST/capture_photo/t
+  - GET/list_photos/
+  - POST/select_photo/
+  - POST/generate_caption/
+
+
+6)[Dependencies](#dependencies)
+
+</details>
+
+--- 
+
+### Setup
 
 <details>
   <summary>Setup steps</summary>
-  
+
+>Run the notebooks on GPU for smoother and faster performance
+
+---
+
 - **Install the needed Dependencies**
 ```python
 !pip install git+https://github.com/huggingface/transformers.git 
@@ -45,7 +104,10 @@ import time
 ---
 
 ### Usage
+<details>
+  <summary>Usage steps</summary>
 
+---  
 - **Capture the image-Run the following code to capture an image using your webcam:**
 ```python
 #capturing image code
@@ -60,7 +122,6 @@ except Exception as err:
   # grant the page permission to access it.
   print(str(err))
 ```
->[!IMPORTANT]
 >Ensure your system has a webcam and necessary permissions to capture images.
 
 - **Image Processing and Caption Generation-After capturing the image, use the following code to generate a caption:**
@@ -100,7 +161,7 @@ speech.save("generated_text.mp3")
 from playsound import playsound
 Audio("generated_text.mp3")
 ```
->[!TIP]
+
 >Modify language ('lang='en'') in 'gTTS' for different speech synthesis
 >
 >Adjust file paths and names based on your project structure.
@@ -109,10 +170,14 @@ Audio("generated_text.mp3")
   1. Adjust the image path (/path/to/photo.jpg) and model name ("Salesforce/blip-image-captioning-base") according to your setup.
   2. Modify the 'max_length' and 'min_length' parameters for the desired caption length.
 
+</details>
+
 ---
-### **Accuracy Metrics**
+### Accuracy Metrics
 <details>
   <summary>Metrics used</summary>
+
+---  
 For checking the accuracy of the models, we have used different metrics like:
 - BERTScore : an automatic evaluation metric used for testing the goodness of text generation systems. It produces the following output values in the range of 0.0 to 1.0:
         - Precision
@@ -133,12 +198,12 @@ For checking the accuracy of the models, we have used different metrics like:
 
 ---
 
-### **Models Used**
->[!note]
->Dataset used for the first 2 models: [dataset (50 images and captions)](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/dataset3.zip)  
+### Models Used 
 
 <details>
 <summary>Model 1 : salesforce/blip2-opt-2.7b</summary>
+
+---
 
 - **About the model**: BLIP-2 consists of a CLIP-like image encoder, a Querying Transformer (Q-Former), and a large language model.
   - Visual Question Answering
@@ -148,39 +213,25 @@ For checking the accuracy of the models, we have used different metrics like:
 - **Location**: The model can be accessed from Salesforce Hugging Face library
   - [blip2-opt-2.7b](https://huggingface.co/Salesforce/blip2-opt-2.7b)
 
-1. **BERTScore**:
-    - Precision: 0.7260
-    - Recall: 0.7872
-    - F1-score: 0.7541
+---
+>Dataset used for the model: [dataset (50 images and captions)](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/dataset3.zip) 
+
+| BERTScore | Precision | Recall | F1-score |
+|-----------------|-----------------|-----------------|-----------------|
+|| 0.7269 | 0.7872 | 0.7541 |
+      
+| ROUGE Metric  | Precision              | Recall                 | F1-score                |
+|---------|------------------------|------------------------|-------------------------|
+| ROUGE-1 | 0.5711694838529204     | 0.7057404605198723     | 0.6259112389882882      |
+| ROUGE-2 | 0.35838442697653206    | 0.46176681935195857    | 0.39949114886886683     |
+| ROUGE-L | 0.5119797835463471     | 0.6315150650003591     | 0.560635915103244       |
+
+| BLEU Score| GLEU Score|
+|-----------------|-----------------|
+| 0.2853194240578867 | 0.3281658319708012 |
    
-3. **ROUGE Score**: 
-     - <details>
-       <summary>ROUGE Score(BLIP)</summary> 
-       
-          ``` 
-          - ROUGE-1:
-              - Precision: 0.5711694838529204
-              - Recall: 0.7057404605198723
-              - F1-score: 0.6259112389882882
-          - ROUGE-2:
-              - Precision: 0.35838442697653206
-              - Recall: 0.46176681935195857
-              - F1-score: 0.39949114886886683
-          - ROUGE-L:
-              - Precision: 0.5119797835463471
-              - Recall:  0.6315150650003591
-              - F1-score:  0.560635915103244
-          ```
-          </details>
-
-3. **BLEU Score**:
-   - 0.2853194240578867
-
-4. **GLEU Score**:
-    - 0.3281658319708012
-
-5. **CLIPScore**:
-    - <details>
+**CLIPScore**:
+  - <details>
       <summary>CLIPScore(BLIP)</summary>  
       
       ``` 
@@ -239,51 +290,42 @@ For checking the accuracy of the models, we have used different metrics like:
       
 To view the code and the resulting accuracies [click here](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/accuracymetrics.ipynb)
 
+---
+
 </details>
 
 <details>
 
 <summary>Model 2 : nlpconnect/vit-gpt2-image-captioning</summary>
 
+---
+
 - **About the model**: This is an image captioning model trained by [@ydshieh](https://huggingface.co/ydshieh) in Flax. It produces reasonable image captioning results. It was mainly fine-tuned as a proof-of-concept for the 🤗 FlaxVisionEncoderDecoder Framework.
 - **Usage**: The model is used for image captioning.
 - **Location**: The model can be accessed from
   - [vit-gpt-image-captioning](https://huggingface.co/nlpconnect/vit-gpt2-image-captioning)
- 
-1. **BERTScore**: 
-    - Precision: 0.6246
-    - Recall: 0.6585
-    - F1-score: 0.6362
 
-2. **ROUGE Score**: 
-   - <details>
-     <summary>ROUGE Score(VitGpt)</summary>
-          
-      ``` 
-          - ROUGE-1:
-              - Precision: 0.4042870038458274
-              - Recall: 0.44236701370524906
-              - F1-score: 0.41503899617383466
-          - ROUGE-2:
-              - Precision: 0.16989874025183618
-              - Recall: 0.20881120625160865
-              - F1-score: 0.18336638637340974
-          - ROUGE-L:
-              - Precision: 0.3620736453089395
-              - Recall:  0.39817976304741015
-              - F1-score:  0.37246338708799215
-      ```
-     </details>
+---
+>Dataset used for the model: [dataset (50 images and captions)](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/dataset3.zip) 
 
-3. **BLEU Score**:
-    - 0.09539884316244567
-  
-4. **GLEU Score**:
-    - 0.15503852724900705
+| BERTScore | Precision | Recall | F1-score |
+|-----------------|-----------------|-----------------|-----------------|
+|| 0.6246 | 0.6585 | 0.6362 |
+      
+| ROUGE Metric  | Precision              | Recall                 | F1-score                |
+|---------|------------------------|------------------------|-------------------------|
+| ROUGE-1 | 0.4042870038458274     | 0.44236701370524906    | 0.41503899617383466     |
+| ROUGE-2 | 0.16989874025183618   | 0.20881120625160865    | 0.18336638637340974     |
+| ROUGE-L | 0.3620736453089395     | 0.39817976304741015    | 0.37246338708799215      |
 
-5. **CLIPScore**:
-   - <details>
-     <summary>CLIPScore(VitGpt)</summary>
+| BLEU Score| GLEU Score|
+|-----------------|-----------------|
+| 0.09539884316244567 | 0.15503852724900705 |
+
+
+**CLIPScore**:
+  - <details>
+    <summary>CLIPScore(VitGpt)</summary>
           
       ``` 
           CLIP Score for 1.jpg: 64.58
@@ -341,15 +383,14 @@ To view the code and the resulting accuracies [click here](https://github.com/Ya
      
 To view the code and the resulting accuracies [click here](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/accuracymetrics.ipynb)
 
-</details>
+---
 
->[!NOTE]
->The dataset for the below model is [arian2502/firstdataset](https://huggingface.co/datasets/arian2502/firstdataset)
->>The trained model can be found on HuggingFace. the name of the model is [arian2502/blip-icb-finetuned](https://huggingface.co/arian2502/blip-icb-finetuned)
+</details>
 
 <details>
   <summary>Model 3 : Salesforce/blip-image-captioning-base</summary>
 
+---
 
 - **About the model**: A Salesforce model which can be used for
   - Visual Question Answering
@@ -358,11 +399,17 @@ To view the code and the resulting accuracies [click here](https://github.com/Ya
 - **Usage**: For our use case, we use the model for image captioning. Because of its smaller size compared to blip2-opt-2.7b, it is easier to train and produces almost alike captions.
 - **Location**: The model can be accessed from
   - [blip-image-captioning-base](https://huggingface.co/Salesforce/blip-image-captioning-base)
- 
-## **Model Training** 
+
+--- 
+**Model Training**
+
+>The dataset for the model is [arian2502/firstdataset](https://huggingface.co/datasets/arian2502/firstdataset)
+>>The trained model can be found on HuggingFace. the name of the model is [arian2502/blip-icb-finetuned](https://huggingface.co/arian2502/blip-icb-finetuned)
+
 <details>
   <summary>Model training steps</summary>
-  
+
+---  
 The **salesforce/blip-image-captioning-base model** is trained to increase the accuracy for this specific usecase. The dataset consists of 1250 images and captions. It is a custom dataset of pictures which are taken from a first person point of view. 
 
 1.The dataset is imported.
@@ -445,82 +492,223 @@ print(generated_caption)
 
 6.Trained model is saved and uploaded/downloaded.
 
+>Time taken to train the model on 1250 images and captions for 10 epochs: 1 hour 8 minutes
+
 For the full working of the code [click here](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/trained.ipynb)
 
 </details>
 
-## **Trained Model Accuracy Metrics**
+---
+**Trained Model Accuracy Metrics**
 
 <details>
   <summary>Results</summary>
 
-1. **BERTScore**: 
-    - BLIP(untrained):
-        - Precision: 0.5309
-        - Recall: 0.6051
-        - F1-score: 0.5637
-    - BLIP(trained):
-        - Precision: 0.8848
-        - Recall: 0.8886
-        - F1-score: 0.8854
-        
-2. **ROUGE Score**: 
-    - BLIP(untrained):
-        - <details>
-          <summary>ROUGE Score(untrained)</summary>
-          
-          ``` 
-          - ROUGE-1:
-              - Precision: 0.26676010739518513
-              - Recall: 0.3862308472077113
-              - F1-score: 0.3066864136993266
-          - ROUGE-2:
-              - Precision: 0.0725541792011556
-              - Recall: 0.1298950742068691
-              - F1-score: 0.08984282440623012
-          - ROUGE-L:
-              - Precision: 0.23059880787255438
-              - Recall:   0.3364418769543522
-              - F1-score:  0.2657411209552809
-          ```
-          </details>
-        
-    - BLIP(trained):
-        - <details>
-          <summary>ROUGE Score(trained)</summary>
-          
-          ``` 
-          - ROUGE-1:
-              - Precision: 0.6806757571022624
-              - Recall: 0.7300539801249587
-              - F1-score: 0.6995404673734046
-          - ROUGE-2:
-              - Precision: 0.577443416297378
-              - Recall: 0.6493630657374209
-              - F1-score: 0.6069535829964249
-          - ROUGE-L:
-              - Precision: 0.6730824339010327
-              - Recall:  0.7226284310678925
-              - F1-score:  0.6922038904392883
-          ```
-          </details>
+---
 
-3. **BLEU Score**:
-    - BLIP(untrained): 0.04215093904464002
-    - BLIP(trained): 0.704256378969982
-  
-4. **GLEU Score**:
-    - BLIP(untrained): 0.08593777080376051
-    - BLIP(trained): 0.6954368111617628
+| BERTScore | Precision | Recall | F1-score |
+|-----------------|-----------------|-----------------|-----------------|
+|Untrained| 0.5309 | 0.6051 | 0.5637 |
+|trained| 0.8848 | 0.8886 | 0.8854 |
 
+      
+| ROUGE (untrained) | ROUGE-1              | ROUGE-2                | ROUGE-L    |            
+|---------|------------------------|------------------------|-------------------------|       
+| Precision | 0.26676010739518513     | 0.0725541792011556    | 0.23059880787255438     |    
+| Recall | 0.3862308472077113  | 0.1298950742068691    | 0.3364418769543522     |
+| F1-score | 0.3066864136993266     | 0.08984282440623012    | 0.2657411209552809     |
+
+| ROUGE (trained) | ROUGE-1              | ROUGE-2                | ROUGE-L    |            
+|---------|------------------------|------------------------|-------------------------|       
+| Precision | 0.6806757571022624    | 0.577443416297378   | 0.6730824339010327    |    
+| Recall | 0.7300539801249587   | 0.6493630657374209   |  0.7226284310678925     |
+| F1-score | 0.6995404673734046    | 0.6069535829964249   | 0.6922038904392883      |
+
+
+| Metric | untrained | trained |
+|-----------------|-----------------|-----------------|
+| BLEU | 0.04215093904464002 | 0.704256378969982 |
+| GLEU | 0.08593777080376051 | 0.6954368111617628 |
+        
 
 Click [here](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/accuracymetrics(trained).ipynb) to view the code
+
 
 </details>
 </details>
 
 ---
 
+## **FAST API CODE**
+
+<details>
+  <summary>Procedure</summary>
+
+---  
+**Dependencies**
+
+<details>
+  <summary>libraries required</summary>
+The below libraries are required to run the code API and its endpoints. 
+
+  ```python
+    from fastapi import FastAPI, BackgroundTasks, HTTPException, File, UploadFile
+    from fastapi.responses  import FileResponse, RedirectResponse, Response, JSONResponse
+    from pydantic import BaseModel
+    import os
+    import cv2
+    from PIL import Image
+    from transformers import AutoProcessor, BlipForConditionalGeneration
+    import torch
+    from gtts import gTTS
+    from playsound import playsound
+  ```
+</details>
+
+---
+**API Endpoints**
+
+- **POST /start_capture/**
+  <details>
+    <summary>Photo Capture</summary>
+    
+  - Description: Captures photos on pressing "c" key and stops on "q" key from the users device
+  - Request Body:
+      ```python
+        print("Press 'c' to capture a photo and 'q' to quit.")
+        while True:
+            # Capture frame-by-frame
+            ret, frame = cap.read()
+            if not ret:
+                print("Failed to grab frame.")
+                break
+    
+            # Display the resulting frame
+            cv2.imshow('Webcam', frame)
+    
+            # Wait for key event
+            key = cv2.waitKey(1) & 0xFF
+    
+            if key == ord('c'):
+                # Determine the next filename based on existing files in the folder
+                existing_files = [f for f in os.listdir(folder) if f.endswith('.jpg')]
+                next_number = len(existing_files) + 1
+                filename = os.path.join(folder, f'{next_number}.jpg')
+                
+                cv2.imwrite(filename, frame)
+                print(f"Photo captured and saved as {filename}")
+    
+            elif key == ord('q'):
+                print("Quitting...")
+                break
+
+    # When everything done, release the capture
+    cap.release()
+
+    cv2.destroyAllWindows()
+      ```
+  >on_event("startup") opens up the webcam as soon as the /start_capture/ is run.
+
+  - Output: ![Screenshot 2024-05-23 161044](https://github.com/Yaswanth-B/AccessibleLLM/assets/154512247/b963ab84-43db-41f0-ac8f-9902586add07)
+
+  </details>
+
+- **GET /list_photos/**
+  <details>
+    <summary>List of photos in folder</summary>
+    
+  - Description: Shows a list of photos saved in the folder
+  - Request Body:
+      ```python
+      image_files = [f for f in os.listdir(folder) if f.endswith('.jpg')]
+      if not image_files:
+        return JSONResponse(status_code=404, content={"message": "No photos found in the specified folder."})
+    
+      return {"photos": image_files}
+      ```
+      
+  -Output:![Screenshot 2024-05-23 161347](https://github.com/Yaswanth-B/AccessibleLLM/assets/154512247/d53eb166-767f-4e84-987c-fe41285cc195)
+  
+  </details>
+
+- **POST /select_photo/**
+  <details> 
+    <summary>Displaying selected photo</summary>
+    
+  - Description: Displays the photo which the user wants to see
+  - Request Body:
+      
+   ```python
+     file_path = os.path.join(folder, filename)
+     print(f"Looking for file at: {file_path}")  # Debugging statement
+     if not os.path.exists(file_path):
+         print("Photo not found.")  # Debugging statement
+         raise HTTPException(status_code=404, detail="Photo not found.")
+
+     image = Image.open(file_path).convert('RGB')
+     image = image.resize((596, 437))
+
+     # Save the image temporarily
+     temp_image_path = "temp_image.jpg"
+     image.save(temp_image_path)
+
+     # Return the image along with the generated caption
+     return FileResponse(temp_image_path, media_type="image/jpeg")
+  ```
+  
+    - Output:
+        - camera clicked: ![Screenshot 2024-05-23 161154](https://github.com/Yaswanth-B/AccessibleLLM/assets/154512247/e5e86db7-8c24-4c0a-a550-c57585aa865b)
+        - folder selected: ![Screenshot 2024-05-23 161429](https://github.com/Yaswanth-B/AccessibleLLM/assets/154512247/e85ad2e0-7431-4aff-a145-d77eedf23a9c)
+
+           
+    </details>
+
+    
+- **POST /generate_caption/**
+  <details>
+    <summary>Image Captioning</summary>
+
+    - Description: Generates caption for the photo captured
+    - Request Body:
+      ```python
+      async def generate_caption(filename: str):
+          file_path = os.path.join(folder, filename)
+          print(f"Looking for file at: {file_path}")  # Debugging statement
+          if not os.path.exists(file_path):
+              print("Photo not found.")  # Debugging statement
+              raise HTTPException(status_code=404, detail="Photo not found.")
+    
+          # Open and resize the image
+          image = Image.open(file_path).convert('RGB')
+          image = image.resize((596, 437))
+    
+          # Caption generation
+          inputs = processor(images=image, return_tensors="pt").to(device)
+          generated_ids = model.generate(**inputs, max_length=50, min_length=20)
+          generated_text = processor.batch_decode(generated_ids, skip_special_tokens=True)[0].strip()    
+      
+           # Text-to-speech conversion
+          speech = gTTS(text=generated_text, lang='en')
+          audio_file_path = "generated_text.mp3"
+          speech.save(audio_file_path)
+      
+          # Play the generated audio
+          playsound(audio_file_path)
+      
+          return {"caption": generated_text}
+      ```
+      > The generated caption is given out in an audio format which will be audible to the user.
+      
+    - Output: from camera:![Screenshot 2024-05-23 161408](https://github.com/Yaswanth-B/AccessibleLLM/assets/154512247/f87cd43c-812b-4c0c-be26-db35591caf92)
+              from folder:![Screenshot 2024-05-23 161501](https://github.com/Yaswanth-B/AccessibleLLM/assets/154512247/4a12d890-9d57-4c2d-a956-df1b91fac5a5)
+      
+  </details>
+
+[click here](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/main.py) to view the code.
+
+</details>
+
+---
 ### Dependencies
 <details>
 <summary>Libraries and Dependencies</summary>
@@ -532,6 +720,7 @@ Click [here](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detect
 - cv2: Library designed for real-time computer vision tasks
 - gTTS (Google Text-to-Speech): Library that interfaces with Google's Text-to-Speech API
 - playsound: Library used for playing audio files
+- FastApi: Web framework for building APIs with Python based on standard Python type hints.
 
 </details>
 
