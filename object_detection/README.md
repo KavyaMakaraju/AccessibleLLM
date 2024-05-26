@@ -684,7 +684,7 @@ The below libraries are required to run the code API and its endpoints.
     
           # Caption generation
           inputs = processor(images=image, return_tensors="pt").to(device)
-          generated_ids = model.generate(**inputs, max_length=50, min_length=20)
+          generated_ids = model.generate(**inputs, min_length=10, temperature=0.7, repetition_penalty=1.2, num_beams=5)
           generated_text = processor.batch_decode(generated_ids, skip_special_tokens=True)[0].strip()    
       
            # Text-to-speech conversion
