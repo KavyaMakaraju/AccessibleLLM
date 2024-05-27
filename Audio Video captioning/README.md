@@ -30,6 +30,10 @@ The dataset.zip file contains the following folders:
 3. *Test Audios*:
    - Contains audio recordings created by the author.
    - These audios are utilized in the combined code, where the audio transcriptions are converted to text and subsequently corrected using the T5 LLM for grammar correction.
+
+## Requirements
+- The requirements file is mentioned [here.](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/Audio%20Video%20captioning/requirements.txt)
+
 ## Models
 
 ### Model 1: Wav2Vec2
