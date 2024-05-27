@@ -128,7 +128,7 @@ The dataset.zip file contains the following folders:
 - **Notebook**: Converts audios to text using Whisper and immediately corrects them using T5.
   - [Combined Model Notebook](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/Audio%20Video%20captioning/own-audios-whisper-T5-model.ipynb)
 
-# Audio/Video Transcription and Grammar Correction App
+# Audio/Video Transcription and Grammar Correction
 
 This Streamlit application allows users to upload audio or video files and receive both transcriptions and grammar-corrected versions of the spoken content. By leveraging the Whisper model for transcription and the Happy Transformer for grammar correction, the app supports multiple audio and video formats including mp4, mp3, wav, m4a, flac, and ogg. Users can view the original transcriptions alongside the corrected versions, providing a clear comparison. The application processes long audio files by splitting them into manageable chunks, ensuring accurate and efficient transcription and correction. This tool is ideal for anyone needing to convert spoken content into well-formatted text.
 
@@ -136,11 +136,10 @@ This Streamlit application allows users to upload audio or video files and recei
 
 1. **Clone the Repository**: Clone the repository to your local machine using the following command:
    ```bash
-   git clone [AccessibleLLM](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/Audio%20Video%20captioning/app.py)
+   git clone Yaswanth-B/AccessibleLLM
 
 2. **Install Dependencies**: Navigate to the project directory and install the required libraries:
     ```
-    cd audio_transcriber
     pip install -r requirements.txt
 3. **Run the Streamlit App**: Start the Streamlit app by running:
     ```
@@ -149,7 +148,7 @@ This Streamlit application allows users to upload audio or video files and recei
 
 5. **View Transcriptions**: The app will display both the original transcription and the corrected transcription, allowing you to compare them.
     
-- **API Code**: The Final streamlit API code which converts audios to text using Whisper and immediately corrects them using T5 is available [here.]( )
+- **API Code**: The Final streamlit API code which converts audios to text using Whisper and immediately corrects them using T5 is available [here.](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/Audio%20Video%20captioning/Final-streamlit-apicode/main.py)
 
 ## Usage
 1. Run the model notebooks to train and evaluate the models.
