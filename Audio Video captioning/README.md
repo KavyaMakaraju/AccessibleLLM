@@ -126,7 +126,7 @@ The dataset.zip file contains the following folders:
    
 ## Combined Model
 - **Notebook**: Converts audios to text using Whisper and immediately corrects them using T5.
-  - [Combined Model Notebook](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/Audio%20Video%20captioning/own-audios-whisper-T5.ipynb)
+  - [Combined Model Notebook](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/Audio%20Video%20captioning/own-audios-whisper-T5-model.ipynb)
 
 # Audio/Video Transcription and Grammar Correction App
 
