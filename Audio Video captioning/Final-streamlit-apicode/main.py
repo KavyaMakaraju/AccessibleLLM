@@ -4,7 +4,7 @@ import whisper
 import streamlit as st
 from pydub import AudioSegment
 
-# Initialize the T5 model for grammar correction
+
 happy_tt = HappyTextToText("T5", "vennify/t5-base-grammar-correction")
 args = TTSettings(num_beams=5, min_length=1)
 
@@ -12,13 +12,11 @@ args = TTSettings(num_beams=5, min_length=1)
 SUPPORTED_FORMATS = ['mp4', 'mp3', 'wav', 'm4a', 'flac', 'ogg']
 
 def split_audio(file_path, chunk_length_ms=60000):
-    """Split audio into chunks for better transcription results."""
     audio = AudioSegment.from_file(file_path)
     chunks = [audio[i:i + chunk_length_ms] for i in range(0, len(audio), chunk_length_ms)]
     return chunks
 
 def transcribe_and_correct(audio_chunk, model):
-    """Transcribe audio and correct grammar."""
     temp_audio_path = "temp_chunk.wav"
     audio_chunk.export(temp_audio_path, format="wav")
     transcription = model.transcribe(temp_audio_path)
@@ -27,7 +25,6 @@ def transcribe_and_correct(audio_chunk, model):
     return text, result.text
 
 def process_file(file_path):
-    """Process the file: split, transcribe, and correct grammar."""
     model = whisper.load_model("medium")
     audio_chunks = split_audio(file_path)
     
