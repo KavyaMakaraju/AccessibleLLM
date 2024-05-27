@@ -140,14 +140,14 @@ This Streamlit application allows users to upload audio or video files and recei
 
 1. **Clone the Repository**: Clone the repository to your local machine using the following command:
    ```bash
-   git clone Yaswanth-B/AccessibleLLM
+   !git clone https://github.com/Yaswanth-B/AccessibleLLM.git
 
 2. **Install Dependencies**: Navigate to the project directory and install the required libraries:
     ```
-    pip install -r requirements.txt
+    pip install -r "AccessibleLLM/Audio Video captioning/requirements.txt"
 3. **Run the Streamlit App**: Start the Streamlit app by running:
     ```
-    streamlit run main.py
+    streamlit run "AccessibleLLM/Audio Video captioning/Final-streamlit-apicode/main.py"
 4. **Upload Your File**: Open the provided URL in your browser (usually http://localhost:8501), and upload an audio or video file in one of the supported formats.
 
 5. **View Transcriptions**: The app will display both the original transcription and the corrected transcription, allowing you to compare them.
