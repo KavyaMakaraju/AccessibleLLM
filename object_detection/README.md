@@ -719,7 +719,7 @@ The below libraries are required to run the code API and its endpoints.
 </details>
 
 ## **Streamlit UI**
-Below is the walkthrough of the image captioning app. You can also view the [demo video](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/demo.mp4) here
+Below is the walkthrough of the image captioning app. You can also download the [demo video](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/demo.mp4) which shows the working of the application.
 
 >run [app](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/app.py) by entering the line "streamlit run app.py" on your terminal
 >>change folder location according to your convenience
