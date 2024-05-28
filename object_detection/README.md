@@ -12,6 +12,9 @@ Saving the Caption as Text: Once the caption is generated, it is saved as a text
 
 Saving the Caption as Audio: In addition to the text file, the caption is also converted into an audio file. This is typically achieved using google text-to-speech (gTTS) technology, which reads the generated text aloud and saves the output as an audio file. This allows for greater accessibility, enabling users to listen to the description rather than read it.
 
+
+Click [here](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/demo.mp4) to download the Demo video which shows the working of the application
+
 ---
 
 ## **Table of Contents**
@@ -716,7 +719,8 @@ The below libraries are required to run the code API and its endpoints.
 </details>
 
 ## **Streamlit UI**
-Below is the walkthrough of the image captioning app. 
+Below is the walkthrough of the image captioning app. You can also view the [demo video](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/demo.mp4) here
+
 >run [app](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/app.py) by entering the line "streamlit run app.py" on your terminal
 >>change folder location according to your convenience
 
