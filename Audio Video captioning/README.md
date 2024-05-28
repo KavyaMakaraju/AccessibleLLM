@@ -30,6 +30,10 @@ The dataset.zip file contains the following folders:
 3. *Test Audios*:
    - Contains audio recordings created by the author.
    - These audios are utilized in the combined code, where the audio transcriptions are converted to text and subsequently corrected using the T5 LLM for grammar correction.
+
+## Requirements
+- The requirements file is mentioned [here.](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/Audio%20Video%20captioning/requirements.txt)
+
 ## Models
 
 ### Model 1: Wav2Vec2
@@ -126,10 +130,29 @@ The dataset.zip file contains the following folders:
    
 ## Combined Model
 - **Notebook**: Converts audios to text using Whisper and immediately corrects them using T5.
-  - [Combined Model Notebook](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/Audio%20Video%20captioning/own-audios-whisper-T5.ipynb)
+  - [Combined Model Notebook](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/Audio%20Video%20captioning/own-audios-whisper-T5-model.ipynb)
 
-## Fast API
-- **API Code**: The API code which converts audios to text using Whisper and immediately corrects them using T5 is available [here.](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/Audio%20Video%20captioning/app.py)
+# Audio/Video Transcription and Grammar Correction
+
+This Streamlit application allows users to upload audio or video files and receive both transcriptions and grammar-corrected versions of the spoken content. By leveraging the Whisper model for transcription and the Happy Transformer for grammar correction, the app supports multiple audio and video formats including mp4, mp3, wav, m4a, flac, and ogg. Users can view the original transcriptions alongside the corrected versions, providing a clear comparison. The application processes long audio files by splitting them into manageable chunks, ensuring accurate and efficient transcription and correction. This tool is ideal for anyone needing to convert spoken content into well-formatted text.
+
+## How to Run
+
+1. **Clone the Repository**: Clone the repository to your local machine using the following command:
+   ```bash
+   !git clone https://github.com/Yaswanth-B/AccessibleLLM.git
+
+2. **Install Dependencies**: Navigate to the project directory and install the required libraries:
+    ```
+    pip install -r "AccessibleLLM/Audio Video captioning/requirements.txt"
+3. **Run the Streamlit App**: Start the Streamlit app by running:
+    ```
+    streamlit run "AccessibleLLM/Audio Video captioning/Final-streamlit-apicode/main.py"
+4. **Upload Your File**: Open the provided URL in your browser (usually http://localhost:8501), and upload an audio or video file in one of the supported formats.
+
+5. **View Transcriptions**: The app will display both the original transcription and the corrected transcription, allowing you to compare them.
+    
+- **API Code**: The Final streamlit API code which converts audios to text using Whisper and immediately corrects them using T5 is available [here.](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/Audio%20Video%20captioning/Final-streamlit-apicode/main.py)
 
 ## Usage
 1. Run the model notebooks to train and evaluate the models.

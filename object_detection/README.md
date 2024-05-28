@@ -56,8 +56,15 @@ Saving the Caption as Audio: In addition to the text file, the caption is also c
   - POST/select_photo/
   - POST/generate_caption/
 
+6)[Streamlit UI](#streamlit-ui)
+  - Walkthrough
+      - Landing page
+      - Capture Photo
+      - List Photos
+      - Generate Captions
+      - Extras
 
-6)[Dependencies](#dependencies)
+7)[Dependencies](#dependencies)
 
 </details>
 
@@ -684,7 +691,7 @@ The below libraries are required to run the code API and its endpoints.
     
           # Caption generation
           inputs = processor(images=image, return_tensors="pt").to(device)
-          generated_ids = model.generate(**inputs, max_length=50, min_length=20)
+          generated_ids = model.generate(**inputs, min_length=10, temperature=0.7, repetition_penalty=1.2, num_beams=5)
           generated_text = processor.batch_decode(generated_ids, skip_special_tokens=True)[0].strip()    
       
            # Text-to-speech conversion
@@ -707,6 +714,71 @@ The below libraries are required to run the code API and its endpoints.
 [click here](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/main.py) to view the code.
 
 </details>
+
+## **Streamlit UI**
+Below is the walkthrough of the image captioning app. 
+>run [app](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detection/app.py) by entering the line "streamlit run app.py" on your terminal
+>>change folder location according to your convenience
+
+<details>
+  <summary>Walkthrough</summary>
+
+---
+  **Landing page**
+  
+  ![Screenshot 2024-05-27 132955](https://github.com/Yaswanth-B/AccessibleLLM/assets/154512247/492f1ba7-c226-4f5a-833b-cd1728a743a7)
+  The landing page consists of a side bar to the left and a "start capture" button below its title. The user can navigate through the features of the app with the help of the side bar.  
+  ![Screenshot 2024-05-27 133004](https://github.com/Yaswanth-B/AccessibleLLM/assets/154512247/4b2a8e17-d7d9-4efb-84d5-3f0658c19d96)
+
+---
+  **Capture Photo**
+  
+  The capturing of the photo begins as soon as the user clicks on the "start capture" button which turns on the webcam and displays a screen reflecting what the camera is seeing. The images can be captured with the click of the "c" key which then stores the captured images in a local folder. The closing of the camera screen and capturing of images is activated when the user presses the "q" key. 
+  ![Screenshot 2024-05-27 133120](https://github.com/Yaswanth-B/AccessibleLLM/assets/154512247/00df6129-9e43-4950-a89d-b6a5ce123a64)
+
+---
+  **List Photos**
+
+  This page gives out a list of all the photos present in your folder. The user can scroll and check if their captured photo has been saved in the folder or not. The user can also check the other images stored in this folder. 
+  ![Screenshot 2024-05-27 144938](https://github.com/Yaswanth-B/AccessibleLLM/assets/154512247/29965f65-5521-4411-a809-ab8022c91c1b)
+
+  Our currently taken photos have been succefully saved. 
+  
+  ![Screenshot 2024-05-27 133231](https://github.com/Yaswanth-B/AccessibleLLM/assets/154512247/b8f68635-1729-43dc-835d-f02ddb716eab)
+
+---
+  **Generate Captions**
+
+  The main content of the app lies on this page which generates the captions for the photo you have taken or selected from your folder. It displays the photo you have selected from this list. The captions for the selected photo are then generated. The generated captions are given out in both text and audio format which the user can listen to and download. 
+  
+  The results are as follows:
+  
+  1.Captured photo generated captions:
+  
+  ![Screenshot 2024-05-27 133435](https://github.com/Yaswanth-B/AccessibleLLM/assets/154512247/2ea8f3f4-0361-42f9-a54c-33ae914a2292)
+
+  2.Random photos from folder captions:
+  
+  ![Screenshot 2024-05-27 133900](https://github.com/Yaswanth-B/AccessibleLLM/assets/154512247/ee3f4422-f35e-4310-ae27-81d09979ee8d)
+
+  ![Screenshot 2024-05-27 133513](https://github.com/Yaswanth-B/AccessibleLLM/assets/154512247/f594fe72-e5e8-40e1-868f-8085dacac529)
+
+---
+  **Extras**
+  
+  You can check if your app is running by looking at the top right corner.
+  
+  ![Screenshot 2024-05-27 150236](https://github.com/Yaswanth-B/AccessibleLLM/assets/154512247/aff195e8-6627-4a70-81e8-8f8b85203ed1)
+
+  The running man icon helps you to understand if your app is running or if it has encountered an error.
+
+  If the app faces an error or if you want to restart the app, click on the top right corner icon and click on rerun.
+
+  ![Screenshot 2024-05-27 150243](https://github.com/Yaswanth-B/AccessibleLLM/assets/154512247/bdd6450f-0b0d-425f-81ea-7569d6c8ada7)
+
+</details>
+
+
 
 ---
 ### Dependencies
