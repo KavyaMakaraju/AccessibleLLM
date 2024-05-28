@@ -153,7 +153,7 @@ This Streamlit application allows users to upload audio or video files and recei
 5. **View Transcriptions**: The app will display both the original transcription and the corrected transcription, allowing you to compare them.
     
 - **API Code**: The Final streamlit API code which converts audios to text using Whisper and immediately corrects them using T5 is available [here.](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/Audio%20Video%20captioning/Final-streamlit-apicode/main.py)
-
+- **Video Demo**: Have a look at the [video demo.](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/Audio%20Video%20captioning/video-demo.mp4)
 ## Usage
 1. Run the model notebooks to train and evaluate the models.
 2. Use the provided Python scripts to test the models with your own audio and video files.
