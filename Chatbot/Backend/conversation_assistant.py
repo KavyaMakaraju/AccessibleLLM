@@ -94,7 +94,7 @@ async def process_conversation(background_tasks: BackgroundTasks, conversation_i
 
     # Get or create LLMChain for the provided conversation_id
     if conversation_input.conversation_id not in conversations:
-        llm = Ollama(model="llama2:chat", temperature=0.1, top_k=50)
+        llm = Ollama(model="llama3:latest", temperature=0.1, top_k=50)
         memory = ConversationBufferMemory(memory_key="chat_history", k=6 ,return_messages=True)
         conversations[conversation_input.conversation_id] = LLMChain(
             llm=llm,
