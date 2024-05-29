@@ -1,7 +1,15 @@
 
 # Audio Video Captioning
 
-This project explores five different models for audio-to-text conversion. The results obtained from these audio-to-text transcriptions are then utilized as input for large language models (LLMs) to perform grammar correction. Among the models evaluated, Whisper emerges as the top performer for accurate transcriptions. Subsequently, the transcribed text undergoes grammar correction using various LLMs, with the T5 model demonstrating superior performance in this task.
+The primary objective of this project is to convert audio files to text and subsequently correct their grammar. 
+
+Five different models are evaluated for audio-to-text conversion, and the results are utilized to perform grammar correction using large language models (LLMs). 
+
+Among the models assessed, Whisper emerges as the most effective for accurate transcriptions. After transcription, various LLMs are employed for grammar correction, with Vennify T5 demonstrating superior performance in this task. 
+
+For detailed information on each model, you can refer to the tables below.
+
+You can have a look at the [video demo.](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/Audio%20Video%20captioning/video-demo.mp4)
 
 ## Requirements
 - The requirements file is mentioned [here.](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/Audio%20Video%20captioning/requirements.txt)
