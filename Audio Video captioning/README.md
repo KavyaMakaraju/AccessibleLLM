@@ -76,6 +76,96 @@ The [dataset.zip](dataset.zip) file contains the following folders:
 # Streamlit: Transcribe & Correct Grammar in Audio/Video
 This Streamlit application allows users to upload audio or video files and receive both transcriptions and grammar-corrected versions of the spoken content. By leveraging the Whisper model for transcription and the Happy Transformer for grammar correction, the app supports multiple audio and video formats including mp4, mp3, wav, m4a, flac, and ogg. Users can view the original transcriptions alongside the corrected versions, providing a clear comparison. The application processes long audio files by splitting them into manageable chunks, ensuring accurate and efficient transcription and correction. This tool is ideal for anyone needing to convert spoken content into well-formatted text.
 
+## Code Explanation
+
+## Installation
+
+Install the dependencies using the following commands:
+```bash
+!pip install happytransformer
+!pip install -U openai-whisper
+!pip install pydub
+```
+## Importing Libraries
+
+Import the required libraries using the following commands:
+```bash
+import os
+import tempfile
+from pydub import AudioSegment
+from happytransformer import HappyTextToText, TTSettings
+from transformers import T5ForConditionalGeneration, T5Tokenizer
+import whisper
+import subprocess
+```
+## Load Models 
+
+Load the models using following commands:
+```bash
+# ---------------VENNIFY T5------------------------
+happy_tt = HappyTextToText("T5", "vennify/t5-base-grammar-correction")
+args = TTSettings(num_beams=5, min_length=1)
+t5_model_name = "vennify/t5-base-grammar-correction"
+t5_model = T5ForConditionalGeneration.from_pretrained(t5_model_name)
+t5_tokenizer = T5Tokenizer.from_pretrained(t5_model_name)
+# --------------WHISPER--------------------------
+model = whisper.load_model("base")
+```
+
+## Transcribe and Generate text 
+
+Get the transcription and grammer corrected text generate using this commands:
+```bash
+transcription = model.transcribe(file_path)
+result = happy_tt.generate_text("grammar: " + segment, args=args)
+```
+## Transcribe Audio
+
+This is the function for transcribing audio using whisper model:
+```bash
+def transcribe_audio(file_path):
+    result = whisper_model.transcribe(file_path)
+    return result['segments']
+```
+## Correct sentences using T5
+
+This is the function for generating the grammer corrected setences using VennifyT5 model:
+```bash
+def correct_grammar(text):
+    input_text = "correct: " + text
+    input_ids = t5_tokenizer.encode(input_text, return_tensors="pt", max_length=512, truncation=True)
+    outputs = t5_model.generate(input_ids, max_length=512, num_beams=4, early_stopping=True)
+    corrected_text = t5_tokenizer.decode(outputs[0], skip_special_tokens=True)
+    return corrected_text
+```
+
+## Process Audio/Video files
+
+This function segments the transcribed audio and each segement is passed as input to T5 LLM for grammer correction:
+```bash
+def process_audio(file_path):
+    segments = transcribe_audio(file_path)
+    
+    original_text = ""
+    corrected_text = ""
+    time_stamped_text = ""
+
+    for segment in segments:
+        original_text += segment['text'] + " "
+        corrected_text += correct_grammar(segment['text']) + " "
+        start_time = format_timestamp(segment['start'])
+        end_time = format_timestamp(segment['end'])
+        time_stamped_text += f"{start_time} - {end_time}: {segment['text']} -> {correct_grammar(segment['text'])}\n"
+    
+    return original_text.strip(), corrected_text.strip(), time_stamped_text.strip()
+```
+
+## Supported File Formats
+
+The following file formats are supported:
+
+**MP3**, **MP4**, **WAV**, **M4A**, **OGG**, **FLAC**
+
 ## How to Run
 
 1. **Clone the Repository**: Clone the repository to your local machine using the following command:
