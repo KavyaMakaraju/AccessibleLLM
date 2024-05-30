@@ -2,6 +2,8 @@
 
 ### Overview
 
+The goal of the project is to help visually disabled people who find it difficult to see and access their surroundings. The app takes care of this problem for such people by taking an image input of what is there in front of the user and giving them the details about it.
+
 This project demonstrates a complete workflow for capturing an image, generating descriptive captions for it using a pre-trained BLIP (Bootstrapped Language-Image Pretraining) model, and then saving these captions in both text and audio formats. Here’s a detailed breakdown of each step involved:
 
 Image Capture: The process begins with capturing an image, which can be done using a camera of the device the user is using. This image serves as the input for the next stage.
@@ -68,6 +70,10 @@ Click [here](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/object_detect
       - Extras
 
 7)[Dependencies](#dependencies)
+
+8)[Hardware Requirements](#hardware-requirements)
+
+9)[Limitations](#limitations)
 
 </details>
 
@@ -782,7 +788,33 @@ Below is the walkthrough of the image captioning app. You can also download the 
 
 </details>
 
+## **Hardware requirements**
+<details>
+  <summary>Hardware Requirements</summary>
 
+Running the given Streamlit app for capturing images, generating captions using a deep learning model, and converting text to speech involves a few key hardware components.
+
+- Webcam: The app needs a webcamm present in the device. 
+- CPU: A modern multi-core processor is recommended. A CPU with at least 4 cores (e.g., Intel Core i5 or AMD Ryzen 5) will handle the web app and basic image processing tasks efficiently.
+- GPU: A GPU is highly recommended for running the BLIP model for image captioning, especially if you want faster inference times.
+    - CUDA Support: For most deep learning frameworks (like PyTorch and TensorFlow), NVIDIA GPUs are preferred due to CUDA support.
+- RAM: Minimum: 8 GB of RAM.
+- Storage: SSD storage is recommended for faster read/write operations.
+
+</details>
+
+## **Limitations**
+
+<details>
+  <summary>Current Limitations</summary>
+
+- The app relies on a webcam for capturing images, which limits usage to devices with a connected or built-in webcam
+- Running deep learning models on a CPU can be very slow. While the code checks for a GPU, it does not handle the scenario where a suitable GPU is unavailable gracefully.
+- The folder path for saving images is hardcoded.
+- The code assumes all images are in JPEG format (.jpg).
+- The gTTS library is used for text-to-speech, which supports limited languages and accents.
+- 
+</details>
 
 ---
 ### Dependencies
