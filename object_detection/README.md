@@ -788,6 +788,8 @@ Below is the walkthrough of the image captioning app. You can also download the 
 
 </details>
 
+---
+
 ## **Hardware requirements**
 <details>
   <summary>Hardware Requirements</summary>
@@ -802,6 +804,8 @@ Running the given Streamlit app for capturing images, generating captions using 
 - Storage: SSD storage is recommended for faster read/write operations.
 
 </details>
+
+---
 
 ## **Limitations**
 
@@ -831,4 +835,9 @@ Running the given Streamlit app for capturing images, generating captions using 
 - FastApi: Web framework for building APIs with Python based on standard Python type hints.
 
 </details>
+
+---
+
+## **Author**
+[@arian2502](https://github.com/arian2502)
 
