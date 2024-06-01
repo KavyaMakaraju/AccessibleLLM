@@ -1,7 +1,7 @@
 # American Sign Language Reader
 The primary objective of this project is to detect characters of American Sign Language from a Video feed and use an open-source LLM to complete the sentence to enhance ease of use.
 
-CNN models were trained for the Detection of Americal Sign Language charactersd. The most performant model in our local systems was [EfficientNet](https://arxiv.org/abs/1905.11946)
+CNN models were trained for the Detection of Americal Sign Language characters. The most performant model in our local systems was [EfficientNet](https://arxiv.org/abs/1905.11946)
 
 For detailed information on each model, you can refer to the notebook [here](https://github.com/Yaswanth-B/AccessibleLLM/blob/main/ASL-Reader/CNN_training.ipynb).
 
