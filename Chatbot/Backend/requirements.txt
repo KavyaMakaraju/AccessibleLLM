@@ -1,0 +1,7 @@
+fastapi
+pydantic
+whisper
+langchain
+gtts
+pyngrok
+uvicorn
